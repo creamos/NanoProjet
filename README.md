@@ -12,12 +12,12 @@ Unity Game made during the NanoProjects
 
 # Credits
 
-- _ (management)
+- Julien Duronsoy (management)
 - Alexandre Lacroix (programming)
-- _ (programming)
-- _ (game design)
-- _ (game design)
-- _ (graph)
-- _ (graph)
-- _ (ergonomy)
-- _ (sound design)
+- Tanguy Depraz (programming)
+- Isaure Maurel (game design)
+- Majda Mdahoma Hadji (game design)
+- Loan Le Hoang (graph)
+- Baptiste Lalue (graph)
+- Oscar Juteau (ergonomy)
+- Gorik Gazarian (sound design)
