@@ -17,12 +17,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0.001f, 100.0f)] private float _boundsSmoothing = 10.0f;
 
     [Header("Movement")]
+    [SerializeField, Range(0.001f, 100.0f)] private float _accelerationTime = 0.5f;
     [SerializeField, Range(0.001f, 100.0f)] private float _movementSpeed = 10.0f;
+    [SerializeField, Range(0.0f, 1.0f)] private float _movementAmount = 1.0f;
+    [SerializeField] private AnimationCurve _movementAmountCurve;
 
     private Vector2 _pos;
 
     private InputAction _moveAction;
     private InputAction _fireAction;
+
+    private Coroutine _knockbackCoroutine;
 
     
     private void Awake() {
@@ -62,5 +67,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log(other.gameObject.ToString());
+        if (other.CompareTag("Obstacle")) {
+            if (_knockbackCoroutine != null) StopCoroutine(_knockbackCoroutine);
+            _knockbackCoroutine = StartCoroutine("HitKnockback");
+        }
+    }
+
+    IEnumerator HitKnockback() {
+        float time = 0.0f;
+        while (time <= 1.0f) {
+
+            yield return null;
+        }
     }
 }

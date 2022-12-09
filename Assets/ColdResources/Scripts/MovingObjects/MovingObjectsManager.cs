@@ -18,6 +18,7 @@ public class MovingObjectsManager : MonoBehaviour
     [SerializeField, MinMaxSlider(0.0f, 10.0f)] private Vector2 _objectSpawningDelay = new Vector2(1.0f, 5.0f);
     [SerializeField] private List<Transform> _objectPrefabs;
     [SerializeField, ReadOnly] private List<Transform> _managedObjects;
+    [SerializeField] private List<PlayerMovement> _managedPlayers;
 
     public void StartGenerating() {
         Debug.Log("Started generation");
