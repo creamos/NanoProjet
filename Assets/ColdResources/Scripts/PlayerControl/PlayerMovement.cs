@@ -60,10 +60,6 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.MovePosition(_pos);
     }
 
-    private void OnMove(InputValue value) {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other) {
         
     }
