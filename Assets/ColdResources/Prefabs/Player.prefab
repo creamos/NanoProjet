@@ -116,10 +116,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5f1a423ade53f4c927496ad3dcdfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 0
   _boundsData: {fileID: 11400000, guid: cb2a5bf525fbb5b42868095cae89c48a, type: 2}
   _boundsSmoothing: 10
+  _accelerationTime: 0.5
   _movementSpeed: 10
+  _movementAmount: 1
+  _movementAmountCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &-3785299711231753942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,5 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49f7fcb9b3c40f48a219be7a5bbefc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1Visual_pf: {fileID: 7958572683484809592, guid: a6e97e03cd511f0418ad73b58efe60c8, type: 3}
-  p2Visual_pf: {fileID: 1094829827703739539, guid: a7fe932d12540414cb1569467eefa2f2, type: 3}
+  p1Visual_pf: {fileID: 2459447046112617231, guid: cd13372aca70e504c993dbe07d820f6f, type: 3}
+  p2Visual_pf: {fileID: 2454618309234458739, guid: 74d5a2174de54274d977b128a85b60ce, type: 3}
