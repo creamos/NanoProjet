@@ -10,11 +10,14 @@ public class PlayersManagerSO : ScriptableObject
     public event Action<int> PlayerJoins;
     public event Action<int> PlayerLeaves;
 
+    public PlayerDataSO _player1Data, _player2Data;
+
+
     [ReadOnly]
     public PlayerInput[] _players = new PlayerInput[2];
+    [ShowNativeProperty] public int nbPlayers => _players.Count(p => p != null);
 
-    [ShowNativeProperty]
-    public int nbPlayers => _players.Count(p => p != null);
+
 
     public PlayerInput this[int key] {
         get {
@@ -43,9 +46,18 @@ public class PlayersManagerSO : ScriptableObject
 
         if (joiningPlayerID != -1) {
             _players[joiningPlayerID] = playerInput;
+            InitPlayer(joiningPlayerID, playerInput.gameObject);
             PlayerJoins?.Invoke(joiningPlayerID);
         } else {
             Destroy(playerInput.gameObject);
+        }
+    }
+
+    private void InitPlayer (int id, GameObject player)
+    {
+        switch (id) {
+        case 0: player.GetComponent<PlayerSetup>().Init(_player1Data); break;
+        case 1: player.GetComponent<PlayerSetup>().Init(_player2Data); break;
         }
     }
 

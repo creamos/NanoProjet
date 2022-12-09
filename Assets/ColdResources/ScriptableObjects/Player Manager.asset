@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46ef1e82e239864aaae33dd6ea3bc6f, type: 3}
   m_Name: Player Manager
   m_EditorClassIdentifier: 
+  _player1Data: {fileID: 11400000, guid: 58f5e0510eb9c1e40989ec47a80c9686, type: 2}
+  _player2Data: {fileID: 11400000, guid: a778dd363bd79ce4baee97f61e78abca, type: 2}
   _players:
   - {fileID: 0}
   - {fileID: 0}
-  nbPlayers: 0

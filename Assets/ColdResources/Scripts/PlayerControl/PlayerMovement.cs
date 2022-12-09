@@ -6,9 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
-{
-    public int playerID;
-    
+{    
     private PlayerInput _playerInput;
     private Rigidbody2D _rigidbody;
 
