@@ -61,6 +61,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        
+        Debug.Log(other.gameObject.ToString());
     }
 }
