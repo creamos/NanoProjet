@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Star_1_idle
+  m_Name: Star_1_Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -48,7 +48,7 @@ AnimationClip:
     - time: 2.08
       value: {fileID: -31084321, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
     - time: 2.24
-      value: {fileID: -1664240351, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
+      value: {fileID: 1496715688, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -82,7 +82,7 @@ AnimationClip:
     - {fileID: 116657454, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
     - {fileID: -603082359, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
     - {fileID: -31084321, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
-    - {fileID: -1664240351, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
+    - {fileID: 1496715688, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
