@@ -17,6 +17,7 @@ public class GamePhaseDataSO : ScriptableObject
 [Serializable]
 public struct EncounterData
 {
+    public int weight;
     public GameObject encounter;
     [MinMaxSlider(0f,10f)]
     public Vector2 delay;
