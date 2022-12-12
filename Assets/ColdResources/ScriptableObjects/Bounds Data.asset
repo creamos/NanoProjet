@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bounds Data
   m_EditorClassIdentifier: 
   boundsHeight: 10
-  boundsWidth: 5
+  boundsWidth: 14
   padding: {x: 1, y: 1}

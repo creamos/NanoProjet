@@ -6,9 +6,9 @@ using UnityEngine.Events;
 
 public class GameStarter : MonoBehaviour
 {
+    [SerializeField] private PlayersManagerSO _playerManager;
     public UnityEvent GameStarted;
 
-    [SerializeField] private PlayersManagerSO _playerManager;
 
     public bool[] playersReady { get; private set; } = { false, false };
 
