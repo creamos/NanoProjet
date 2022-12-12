@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a6baceebfb8974abeb3cd444f72413, type: 3}
   m_Name: Movement Data
   m_EditorClassIdentifier: 
-  fallingSpeed: 1
+  fallingSpeed: 10
   movementSpeed: 10
-  knockbackMultiplier: 0.8
-  boostMultiplier: 1.5
+  knockbackMultiplier: 0.2
   knockbackTime: 0.5
-  boostTime: 0.5
   knockbackProfile:
     serializedVersion: 2
     m_Curve:
@@ -42,6 +40,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  boostMultiplier: 1.8
+  boostTime: 0.5
   boostProfile:
     serializedVersion: 2
     m_Curve:

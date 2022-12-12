@@ -32,9 +32,6 @@ public class PlayerMovement : MonoBehaviour
     private InputAction _moveAction;
     private InputAction _fireAction;
 
-
-
-    
     private void Awake() {
         _playerInput = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -43,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start() {
         _moveAction = _playerInput.actions["move"];
         _fireAction = _playerInput.actions["fire"];
+        enabled = false;
     }
 
     private void Update() {
@@ -89,14 +87,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void ApplyKnockback() {
         if (_knockbackProcess != null) StopCoroutine(_knockbackProcess);
-        _knockbackProcess = StartCoroutine("KnockbackProcess");
+        _knockbackProcess = StartCoroutine("KnockbackProcess", 1.0f);
     }
 
     private void ApplyBoost() {
         if (_boostProcess != null) StopCoroutine(_boostProcess);
-        _boostProcess = StartCoroutine("BoostProcess");
+        _boostProcess = StartCoroutine("BoostProcess", 1.0f);
     }
-
 
     IEnumerator KnockbackProcess(float amount = 1.0f) {
         float knockbackTime = _movementData.knockbackTime;
@@ -106,8 +103,11 @@ public class PlayerMovement : MonoBehaviour
 
             knockbackTime -= Time.deltaTime;
             yield return null;
+
+            Debug.Log(_knockbackAmount);
         }
         _knockbackAmount = _movementData.knockbackProfile.Evaluate(0.0f);
+        Debug.Log("Knockback ended");
     }
 
     IEnumerator BoostProcess(float amount = 1.0f) {
