@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a6baceebfb8974abeb3cd444f72413, type: 3}
   m_Name: Movement Data
   m_EditorClassIdentifier: 
-  fallingSpeed: 0
+  fallingSpeed: 1
   movementSpeed: 10
   knockbackMultiplier: 0.8
   boostMultiplier: 1.5
