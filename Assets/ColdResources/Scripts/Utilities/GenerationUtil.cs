@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GenerationUtil : MonoBehaviour
 {
-    [SerializeField] private MovingObjectsManager generator;
+    [SerializeField] private ObjectsGenerator generator;
     
     [Button]
     private void StartGenerator() {

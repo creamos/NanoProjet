@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class MovingObjectsManager : MonoBehaviour
+public class ObjectsGenerator : MonoBehaviour
 {
     [Header("Bounds")]
     [SerializeField] private BoundsDataSO _boundsData;
+
+    [Header("Phase")]
+    [SerializeField] private GamePhaseDataSO _phaseData;
 
     [Header("Object Movement")]
     [SerializeField] private float _moveSpeed;
@@ -62,5 +65,13 @@ public class MovingObjectsManager : MonoBehaviour
             }
             yield return new WaitForSeconds(Random.Range(_objectSpawningDelay.x, _objectSpawningDelay.y));
         }
+    }
+
+    public void OnStartPhase(GamePhaseDataSO phase) {
+        
+    }
+
+    public void OnEndPhase(GamePhaseDataSO phase) {
+
     }
 }
