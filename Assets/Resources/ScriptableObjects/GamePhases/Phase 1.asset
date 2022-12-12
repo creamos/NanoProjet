@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
-  m_Name: GamePhase
+  m_Name: Phase 1
   m_EditorClassIdentifier: 
-  startTime: 15
-  endTime: 75
+  startTime: 0
+  endTime: 15
   encounters:
   - encounter: {fileID: 0}
     delay: {x: 4, y: 7}
