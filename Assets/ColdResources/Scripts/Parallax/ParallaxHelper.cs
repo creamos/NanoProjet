@@ -2,7 +2,7 @@ using NaughtyAttributes;
 using UnityEngine;
 
 [RequireComponent(typeof(ParallaxPaner))]
-public class ParallaxInitializer : MonoBehaviour
+public class ParallaxHelper : MonoBehaviour
 {
     public Sprite[] sprites;
 

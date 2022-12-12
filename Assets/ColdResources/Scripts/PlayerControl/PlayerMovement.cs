@@ -58,10 +58,11 @@ public class PlayerMovement : MonoBehaviour
             float clamped_horizontal = Mathf.Clamp(_pos.x, -_boundsData.boundsWidth * 0.5f, _boundsData.boundsWidth * 0.5f);
             _pos.x = Mathf.Lerp(_pos.x, clamped_horizontal, _boundsSmoothing * Time.deltaTime);
         }
+        transform.position = _pos;
     }
 
     private void FixedUpdate() {
-        _rigidbody.MovePosition(_pos);
+        //_rigidbody.MovePosition(_pos);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

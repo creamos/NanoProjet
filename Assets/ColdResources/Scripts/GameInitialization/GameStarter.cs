@@ -10,11 +10,19 @@ public class GameStarter : MonoBehaviour
     [SerializeField] private PlayersManagerSO _playerManager;
     public UnityEvent GameStarted;
 
-
+#if UNITY_EDITOR
+    [SerializeField] bool _debugSoloMode = false;
+#endif
     public bool[] playersReady { get; private set; } = { false, false };
 
+
+#if UNITY_EDITOR
+    [ShowNativeProperty()]
+    public bool canStart => (_debugSoloMode && playersReady.Contains(true)) || !playersReady.Contains(false);
+#else
     [ShowNativeProperty()]
     public bool canStart => !playersReady.Contains(false);
+#endif
 
     private void Awake ()
     {

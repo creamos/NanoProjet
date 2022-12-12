@@ -3,9 +3,12 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayersManagerSO _playerManagerSO;
+
+    public UnityEvent GameStarted;
 
     public UnityEvent<GamePhaseDataSO> PhaseStarted, PhaseEnded;
 
@@ -22,6 +25,7 @@ public class GameManager : MonoBehaviour
     
     public bool isGameRunning { get; private set; } = false;
     public float startTime { get; private set; }
+    public float GameTime => Mathf.Max(Time.time - startTime, 0);
 
 
     float _currentPhaseStartTime => startTime + _phases[currentPhaseID].startTime;
@@ -54,6 +58,8 @@ public class GameManager : MonoBehaviour
 
         do {
             waitForNextPhase = true;
+            GameStarted?.Invoke();
+            Debug.Log("GameStarted");
 
             yield return new WaitUntil(() => Time.time >= _currentPhaseStartTime);
 
