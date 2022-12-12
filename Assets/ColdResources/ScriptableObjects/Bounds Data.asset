@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af00fbfef554d9f46b2aaee955755eeb, type: 3}
   m_Name: Bounds Data
   m_EditorClassIdentifier: 
-  boundsHeight: 10
+  boundsHeight: 32
   boundsWidth: 14
   padding: {x: 1, y: 1}
