@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class GameStarter : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class GameStarter : MonoBehaviour
             _playerManager.PlayerLeaves += OnPlayerLeave;
             _playerManager.PlayerJoins += OnPlayerJoins;
         }
+        GameStarted.AddListener(OnGameStarted);
     }
 
     private void OnPlayerJoins(int playerID)
@@ -45,6 +47,15 @@ public class GameStarter : MonoBehaviour
                 Debug.Log("GameStart");
                 GameStarted?.Invoke();
             }
+        }
+    }
+
+    private void OnGameStarted() {
+        PlayerMovement movement;
+        foreach (PlayerInput player in _playerManager._players)
+        {
+            movement = player.GetComponent<PlayerMovement>();
+            movement.enabled = true;
         }
     }
 }

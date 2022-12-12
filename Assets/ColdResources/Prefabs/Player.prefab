@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4234817138641333216}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,15 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boundsData: {fileID: 11400000, guid: cb2a5bf525fbb5b42868095cae89c48a, type: 2}
   _boundsSmoothing: 10
-  _accelerationTime: 0.5
-  _movementSpeed: 10
-  _movementAmount: 1
-  _movementAmountCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  _movementData: {fileID: 11400000, guid: b10d00307d577ef46a86aae18c887fa4, type: 2}
 --- !u!114 &-3785299711231753942
 MonoBehaviour:
   m_ObjectHideFlags: 0
