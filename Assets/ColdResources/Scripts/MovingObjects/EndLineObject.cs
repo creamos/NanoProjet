@@ -14,7 +14,7 @@ public class EndLineObject : MonoBehaviour
         PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
         if (playerMovement) {
             StartCoroutine("EndProcess");
-            foreach (PlayerInput player in _playersManager._players)
+            foreach (PlayerInput player in _playersManager.players)
             {
                 playerMovement = player.GetComponent<PlayerMovement>();
                 playerMovement.enabled = false;

@@ -49,7 +49,7 @@ public class GameStarter : MonoBehaviour
     private void OnPlayerReady (int playerID)
     {
         Debug.Log($"Player {playerID + 1} Ready");
-        if(_playerManager.nbPlayers == 2) {
+        if(_playerManager.nbPlayers == 2 || _debugSoloMode) {
             playersReady[playerID] = true;
             if (canStart) {
                 Debug.Log("GameStart");
@@ -60,8 +60,10 @@ public class GameStarter : MonoBehaviour
 
     private void OnGameStarted() {
         PlayerMovement movement;
-        foreach (PlayerInput player in _playerManager._players)
+        foreach (PlayerInput player in _playerManager.players)
         {
+            if(!player) continue;
+
             movement = player.GetComponent<PlayerMovement>();
             movement.enabled = true;
         }

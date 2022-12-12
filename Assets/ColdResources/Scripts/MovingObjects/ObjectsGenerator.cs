@@ -92,7 +92,7 @@ public class ObjectsGenerator : MonoBehaviour
         Vector2 target_pos = Vector2.zero;
         if (_useTestPlayer) target_pos = _testPlayer.transform.position;
         else {
-            foreach (var player in _playersManager._players)
+            foreach (var player in _playersManager.players)
             {
                 Vector2 pos = player.transform.position;
                 if (pos.y < target_pos.y) target_pos = pos;
@@ -118,7 +118,7 @@ public class ObjectsGenerator : MonoBehaviour
         Vector2 target_pos = Vector2.zero;
         if (_useTestPlayer) target_pos = _testPlayer.transform.position;
         else {
-            foreach (var player in _playersManager._players)
+            foreach (var player in _playersManager.players)
             {
                 Vector2 pos = player.transform.position;
                 if (pos.y > target_pos.y) target_pos = pos;
