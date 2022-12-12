@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start() {
         _moveAction = _playerInput.actions["move"];
         _fireAction = _playerInput.actions["fire"];
-        enabled = false;
     }
 
     private void Update() {

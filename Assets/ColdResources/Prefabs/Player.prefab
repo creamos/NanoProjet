@@ -111,7 +111,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3297566612777459473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c5f1a423ade53f4c927496ad3dcdfa5, type: 3}
   m_Name: 
@@ -119,6 +119,8 @@ MonoBehaviour:
   _boundsData: {fileID: 11400000, guid: cb2a5bf525fbb5b42868095cae89c48a, type: 2}
   _boundsSmoothing: 10
   _movementData: {fileID: 11400000, guid: b10d00307d577ef46a86aae18c887fa4, type: 2}
+  _hitObstacles: []
+  _hitBoosters: []
 --- !u!114 &-3785299711231753942
 MonoBehaviour:
   m_ObjectHideFlags: 0
