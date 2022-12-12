@@ -8,7 +8,8 @@ public class ParallaxPaner : MonoBehaviour
     GameObject cam;
 
     public float parallaxAmount;
-    public float length, startOffset;
+    public float length;
+    //public float startOffset;
 
     public bool isArriving = true;
     public bool isLooping = true;
@@ -18,12 +19,12 @@ public class ParallaxPaner : MonoBehaviour
     void AutoLength ()
     {
         length = GetComponent<SpriteRenderer>().bounds.size.y;
-        startOffset = 0;
+        //startOffset = 0;
     }
 
     private void OnDrawGizmosSelected ()
     {
-        Vector3 start = transform.position + Vector3.up * startOffset;
+        Vector3 start = transform.position;// + Vector3.up * startOffset;
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(
             start + Vector3.up * length / 2f + Vector3.right * -10,
@@ -36,7 +37,7 @@ public class ParallaxPaner : MonoBehaviour
 
     private void Start ()
     {
-        startPos = transform.position.y + startOffset;
+        startPos = transform.position.y;
         cam = Camera.main.gameObject;
     }
 
@@ -54,12 +55,8 @@ public class ParallaxPaner : MonoBehaviour
             if (t > startPos + length) startPos += length;
             else if (t < startPos - length) startPos -= length;
         }
-    }
 
-    private void OnBecameInvisible ()
-    {
-
-        if (isLeaving)
+        if (isLeaving && t > startPos + length)
             Destroy(gameObject);
     }
 }

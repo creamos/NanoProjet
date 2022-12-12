@@ -1,4 +1,5 @@
 using Cinemachine;
+using NaughtyAttributes;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class TargetGroupProcessor : MonoBehaviour
         transposer.m_AdjustmentMode = CinemachineFramingTransposer.AdjustmentMode.ZoomOnly;
 
         _bait = new GameObject("Camera Computed Target").transform;
-        _bait.parent = transform;
+        _bait.parent = transform.parent;
 
         _targetGroup.m_Targets = new Target[] {
             new Target {
@@ -36,6 +37,11 @@ public class TargetGroupProcessor : MonoBehaviour
 
     }
 
+    float smoothVel;
+
+    [SerializeField, ReadOnly] float _baitPos, _smoothedBaitPos;
+    [SerializeField, Range(0,1)] float _lerpAmount;
+
     private void Update ()
     {
         var targetByDst = targets.Select(t=>t.position.y).OrderBy(height => height);
@@ -43,8 +49,9 @@ public class TargetGroupProcessor : MonoBehaviour
         case 2:
             var lowest = targetByDst.First();
             var highest = targetByDst.Last();
-
-            _bait.position = Vector3.up * (lowest + highest) / 2f;
+            _baitPos = (lowest + highest) / 2f;
+            _smoothedBaitPos = Mathf.SmoothDamp(_bait.position.y, _baitPos, ref smoothVel, 1f);
+            _bait.position = Vector3.up * _baitPos;
 
             _targetGroup.m_Targets[0].radius = (highest - lowest)/2f + 1f;
             break;
