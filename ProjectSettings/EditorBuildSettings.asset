@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/ColdResources/Scenes/MainScene.unity
     guid: 860e5473de4682d48b19472b1b99ef1e
-  - enabled: 1
+  - enabled: 0
     path: Assets/ColdResources/Scenes/TestScene-PlayerControl.unity
     guid: aa652e79262de794e8844aee5d3c06cd
+  - enabled: 1
+    path: Assets/ColdResources/Scenes/TestSceneLevelDesign.unity
+    guid: 1063a2807fd9b8148ba365a8ac31d8c9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b35815e1e53e67d478d7a5526a735e87, type: 2}
