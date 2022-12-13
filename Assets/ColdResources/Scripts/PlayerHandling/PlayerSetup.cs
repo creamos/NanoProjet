@@ -10,6 +10,8 @@ public class PlayerSetup : MonoBehaviour
     {
         GetComponent<PlayerDataReference>().playerData = data;
 
+        transform.position = position;
+
         GameObject visual;
         PlayerFeedbackSetup feedback;
         if (data.ID == 0) {

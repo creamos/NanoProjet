@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7526084127140752897, guid: 77e4b0e7cf99b08488daaab22a1f011e, type: 3}
+      propertyPath: managedReferences[1288648833535574023].Channel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7526084128358388360, guid: 77e4b0e7cf99b08488daaab22a1f011e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7526084128358388361, guid: 77e4b0e7cf99b08488daaab22a1f011e, type: 3}
       propertyPath: m_Name
-      value: Player Feedbacks
+      value: P2 Feedbacks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77e4b0e7cf99b08488daaab22a1f011e, type: 3}

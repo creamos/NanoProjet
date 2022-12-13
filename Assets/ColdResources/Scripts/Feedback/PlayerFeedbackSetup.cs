@@ -18,7 +18,7 @@ public class PlayerFeedbackSetup : MonoBehaviour
     {
         playerMovement.BoostEvent.AddListener(_boostFeedback.PlayFeedbacks);
         playerMovement.CollisionEvent.AddListener(_collisionFeedback.PlayFeedbacks);
-        playerMovement.GrazeEvent.AddListener(_grazeFeedback.PlayFeedbacks);
+        //playerMovement.GrazeEvent.AddListener(_grazeFeedback.PlayFeedbacks);
         
         MMF_Scale scale_feedback = _collisionFeedback.GetFeedbackOfType<MMF_Scale>();
         scale_feedback.AnimateScaleTarget = playerVisual.transform;
