@@ -17,7 +17,7 @@ public class AudioSystemsBridge : MonoBehaviour
     {
         _managerSO.RunStarted.AddListener(_manager.StartMusic);
         _managerSO.PlayerObstacleCollision.AddListener(_manager.PlaySlowSound);
-        _managerSO.PlayerBoost.AddListener(_manager.PlayBoostSound);
+        //_managerSO.PlayerBoost.AddListener(_manager.PlayBoostSound);
         _managerSO.PaceChanged.AddListener(_manager.ChangeMusicToHardmode);
     }
 
@@ -25,7 +25,7 @@ public class AudioSystemsBridge : MonoBehaviour
     {
         _managerSO.RunStarted.RemoveListener(_manager.StartMusic);
         _managerSO.PlayerObstacleCollision.RemoveListener(_manager.PlaySlowSound);
-        _managerSO.PlayerBoost.RemoveListener(_manager.PlayBoostSound);
+        //_managerSO.PlayerBoost.RemoveListener(_manager.PlayBoostSound);
         _managerSO.PaceChanged.RemoveListener(_manager.ChangeMusicToHardmode);
     }
 }
