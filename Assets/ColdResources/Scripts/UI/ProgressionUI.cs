@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class ProgressionUI : MonoBehaviour
 {
-    [SerializeField] private GameManager _gameManager;
+    private GameManager _gameManager;
     private float sliderValue = 0.0f;
 
-    [Header("Visual")]
     [SerializeField] private RectTransform _point;
     [SerializeField] private RectTransform _progressBar;
+
+    private void Start() {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
 
     // Update is called once per frame
     private void Update()
     {
-        if (_gameManager && _gameManager.isGameRunning) {
+        if (_gameManager.isGameRunning) {
             sliderValue = _gameManager.GameTime / _gameManager.MaxTime;
         }
 
