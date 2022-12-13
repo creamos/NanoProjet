@@ -79,9 +79,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBoostSound ()
     {
-        try {
-            e_instBoost = RuntimeManager.CreateInstance(e_refBoost);
-        } catch { };
+        e_instBoost = RuntimeManager.CreateInstance(e_refBoost);
 
         if (!IsPlaying(e_instBoost)) {
             e_instBoost.start();

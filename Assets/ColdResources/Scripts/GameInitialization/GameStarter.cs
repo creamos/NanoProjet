@@ -50,7 +50,12 @@ public class GameStarter : MonoBehaviour
     private void OnPlayerReady (int playerID)
     {
         Debug.Log($"Player {playerID + 1} Ready");
-        if(_playerManager.nbPlayers == 2 || _debugSoloMode) {
+
+#if UNITY_EDITOR
+        if (_playerManager.nbPlayers == 2 || _debugSoloMode) {
+#else
+        if (_playerManager.nbPlayers == 2) {
+#endif
             playersReady[playerID] = true;
             if (canStart) {
                 Debug.Log("GameStart");
