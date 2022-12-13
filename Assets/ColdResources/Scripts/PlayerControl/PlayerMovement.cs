@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerDataReference))]
+[RequireComponent(typeof(StudioEventEmitter))]
 public class PlayerMovement : MonoBehaviour
 {
     public UnityEvent GrazeEvent, CollisionEvent, BoostEvent;
@@ -37,11 +38,13 @@ public class PlayerMovement : MonoBehaviour
     //Modifiers
     private Coroutine _knockbackProcess;
     private Coroutine _boostProcess;
-    private float _knockbackAmount = 0.0f;
+    public float knockbackAmount { get; private set; } = 0.0f;
     private float _boostAmount = 0.0f;
 
     private InputAction _moveAction;
     private InputAction _fireAction;
+
+    private StudioEventEmitter _emitter;
 
     static float _lowestPosition;
 
@@ -54,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start ()
     {
+        _emitter = GetComponent<StudioEventEmitter>();
         _moveAction = _playerInput.actions["move"];
         _fireAction = _playerInput.actions["fire"];
         _fireAction.performed += OnTrigger;
@@ -67,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             _vel.x = movementValue.x * _movementData.movementSpeed;
             _vel.y = -_movementData.fallingSpeed;
 
-            float add_knockback = _vel.y * _knockbackAmount * (_movementData.knockbackMultiplier - 1.0f);
+            float add_knockback = _vel.y * knockbackAmount * (_movementData.knockbackMultiplier - 1.0f);
             float add_boost = _vel.y * _boostAmount * (_movementData.boostMultiplier - 1.0f);
             _vel.y += add_boost + add_knockback;
         }
@@ -98,11 +102,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Boost : " + boostAmount);
                 ApplyBoost(boostAmount);
 
-                var emitter = booster.GetComponentInChildren<StudioEventEmitter>();
-                //if (emitter) {
-                //    Debug.LogWarning("Play Boost Sound");
-                //    emitter.Play();
-                //}
+                _emitter.Play();
 
                 BoostEvent?.Invoke();
                 break;
@@ -154,14 +154,14 @@ public class PlayerMovement : MonoBehaviour
         float knockbackTime = _movementData.knockbackTime;
         while (knockbackTime > 0.0f) {
             float knockbackTime_amount = knockbackTime / _movementData.knockbackTime;
-            _knockbackAmount = _movementData.knockbackProfile.Evaluate(knockbackTime_amount);
+            knockbackAmount = _movementData.knockbackProfile.Evaluate(knockbackTime_amount);
 
             knockbackTime -= Time.deltaTime;
             yield return null;
 
-            Debug.Log(_knockbackAmount);
+            Debug.Log(knockbackAmount);
         }
-        _knockbackAmount = _movementData.knockbackProfile.Evaluate(0.0f);
+        knockbackAmount = _movementData.knockbackProfile.Evaluate(0.0f);
         Debug.Log("Knockback ended");
     }
 
