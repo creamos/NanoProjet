@@ -17,9 +17,9 @@ MonoBehaviour:
   encounters:
   - weight: 1
     encounter: {fileID: 1070861010859674884, guid: 3f287e89d690a5344a9bac9c67b8c5ff, type: 3}
-    delay: {x: 0, y: 3}
+    delay: {x: 7.5, y: 8}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
     encounter: {fileID: 3200379158989347030, guid: a5da83b3b0533ba45ae35d57c055d414, type: 3}
-    delay: {x: 0, y: 4}
+    delay: {x: 7.5, y: 8}
     rangePosition: {x: 0.5, y: 0.5}
