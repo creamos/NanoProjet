@@ -53,45 +53,13 @@ MonoBehaviour:
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
     encounter: {fileID: 4136166379655199022, guid: a8dd8db140da3ce4daedf962517c0867, type: 3}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
+    delay: {x: 1.5, y: 2}
+    rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
-  - weight: 0
-    encounter: {fileID: 0}
-    delay: {x: 0, y: 0}
-    rangePosition: {x: 0, y: 0}
+    encounter: {fileID: 6249789658536170270, guid: d4a4b07564105bf48bf593849bdb6f7b, type: 3}
+    delay: {x: 0.5, y: 1}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 8849477346519635248, guid: bc4b05d47fedfdd4abaa218d5aad7625, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
