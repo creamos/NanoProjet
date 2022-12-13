@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestGeneratorPhase
   m_EditorClassIdentifier: 
   startTime: 5
-  endTime: 20
+  endTime: 10
   encounters:
   - weight: 1
     encounter: {fileID: 124169643548885614, guid: 2db7459cf2d13554ea3847c02c2888c9, type: 3}
@@ -21,7 +21,7 @@ MonoBehaviour:
     rangePosition: {x: 0.25, y: 0.75}
   - weight: 1
     encounter: {fileID: 7409219573738488521, guid: f268a399181295044a599bfc4534ff95, type: 3}
-    delay: {x: 0, y: 3}
+    delay: {x: 1, y: 3}
     rangePosition: {x: 0.25, y: 0.75}
   - weight: 1
     encounter: {fileID: 4702313162533988756, guid: 1402b74e46198fa4f95bb9a065a7ed7e, type: 3}

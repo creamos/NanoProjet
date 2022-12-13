@@ -303,12 +303,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7078541297280547704, guid: dc1ee008a9cf6d140b3664ead41eb3d3, type: 3}
       propertyPath: _phases.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7078541297280547704, guid: dc1ee008a9cf6d140b3664ead41eb3d3, type: 3}
       propertyPath: _phases.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: f127ad10a5465e34a9461580da334040, type: 2}
+    - target: {fileID: 7078541297280547704, guid: dc1ee008a9cf6d140b3664ead41eb3d3, type: 3}
+      propertyPath: _phases.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e43d57d46ca6869479a369246834059c, type: 2}
     - target: {fileID: 7078541297280547704, guid: dc1ee008a9cf6d140b3664ead41eb3d3, type: 3}
       propertyPath: PhaseEnded.m_PersistentCalls.m_Calls.Array.size
       value: 1
