@@ -15,7 +15,7 @@ public class MovementDataSO : ScriptableObject
     [CurveRange(0.0f, 0.0f, 1.0f, 1.0f, EColor.Red)] public AnimationCurve knockbackProfile;
 
     [Header("Boost")]
-    [Range(1.0f, 2.0f)] public float boostMultiplier = 1.5f;
+    [Range(1.0f, 10f)] public float boostMultiplier = 1.5f;
     public float boostTime = 0.5f;
     [CurveRange(0.0f, 0.0f, 1.0f, 1.0f, EColor.Blue)] public AnimationCurve boostProfile;
 

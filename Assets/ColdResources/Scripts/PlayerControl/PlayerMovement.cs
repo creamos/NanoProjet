@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
@@ -24,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private MovementDataSO _movementData;
 
-    [SerializeField, ReadOnly] private List<Transform> _hitObstacles; 
-    [SerializeField, ReadOnly] private List<Transform> _hitBoosters; 
+    [SerializeField, ReadOnly] private List<Transform> _hitObstacles;
+    [SerializeField, ReadOnly] private List<Booster> _hitBoosters;
 
     private Vector2 _pos;
     private Vector2 _vel;
@@ -40,23 +41,28 @@ public class PlayerMovement : MonoBehaviour
 
     static float _lowestPosition;
 
-    private void Awake() {
+    private void Awake ()
+    {
         _playerInput = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _data = GetComponent<PlayerDataReference>();
     }
 
-    private void Start() {
+    private void Start ()
+    {
         _moveAction = _playerInput.actions["move"];
         _fireAction = _playerInput.actions["fire"];
+        _fireAction.performed += OnTrigger;
+        _pos = transform.position;
     }
 
-    private void Update() {
+    private void Update ()
+    {
         Vector2 movementValue = _moveAction.ReadValue<Vector2>();
         if (_movementData) {
             _vel.x = movementValue.x * _movementData.movementSpeed;
             _vel.y = -_movementData.fallingSpeed;
-        
+
             float add_knockback = _vel.y * _knockbackAmount * (_movementData.knockbackMultiplier - 1.0f);
             float add_boost = _vel.y * _boostAmount * (_movementData.boostMultiplier - 1.0f);
             _vel.y += add_boost + add_knockback;
@@ -73,46 +79,63 @@ public class PlayerMovement : MonoBehaviour
         if (_pos.y < _lowestPosition) _lowestPosition = _pos.y;
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate ()
+    {
         //_rigidbody.MovePosition(_pos);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+
+    private void OnTrigger (InputAction.CallbackContext obj)
+    {
+        foreach (var booster in _hitBoosters) {
+            if (booster.Boost(_data.ID, _pos.y, out float boostAmount)) {
+                Debug.Log("Boost : " + boostAmount);
+                ApplyBoost(boostAmount);
+                BoostEvent?.Invoke();
+                break;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D (Collider2D other)
+    {
         if (other.CompareTag("Obstacle") && !_hitObstacles.Contains(other.transform)) {
             _hitObstacles.Add(other.transform);
             ApplyKnockback();
             CollisionEvent?.Invoke();
         }
-        if (other.CompareTag("Booster") && !_hitBoosters.Contains(other.transform)) {
-            _hitBoosters.Add(other.transform);
-            ApplyBoost();
-            BoostEvent?.Invoke();
+        if (other.CompareTag("Booster") && other.TryGetComponent(out Booster booster) && !_hitBoosters.Contains(booster)) {
+            _hitBoosters.Add(booster);
         }
         if (other.CompareTag("Player") && _data.playerData && _data.ID == 0) {
             GrazeEvent?.Invoke();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
+    private void OnTriggerExit2D (Collider2D other)
+    {
         if (other.CompareTag("Obstacle") && _hitObstacles.Contains(other.transform)) {
             _hitObstacles.Remove(other.transform);
         }
-        if (other.CompareTag("Booster") && _hitBoosters.Contains(other.transform)) {
-            _hitBoosters.Remove(other.transform);
+        if (other.CompareTag("Booster") && TryGetComponent(out Booster booster) && _hitBoosters.Contains(booster)) {
+            _hitBoosters.Remove(booster);
         }
     }
 
-    private void ApplyKnockback() {
+    private void ApplyKnockback ()
+    {
         if (_knockbackProcess != null) StopCoroutine(_knockbackProcess);
-        _knockbackProcess = StartCoroutine("KnockbackProcess", 1.0f);
+        _knockbackProcess = StartCoroutine(KnockbackProcess(1.0f));
     }
 
-    private void ApplyBoost() {
+    private void ApplyBoost (float boostAmount)
+    {
         if (_boostProcess != null) StopCoroutine(_boostProcess);
-        _boostProcess = StartCoroutine("BoostProcess", 1.0f);
+        _boostProcess = StartCoroutine(BoostProcess(boostAmount));
     }
 
-    IEnumerator KnockbackProcess(float amount = 1.0f) {
+    IEnumerator KnockbackProcess (float amount = 1.0f)
+    {
         float knockbackTime = _movementData.knockbackTime;
         while (knockbackTime > 0.0f) {
             float knockbackTime_amount = knockbackTime / _movementData.knockbackTime;
@@ -127,7 +150,8 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Knockback ended");
     }
 
-    IEnumerator BoostProcess(float amount = 1.0f) {
+    IEnumerator BoostProcess (float amount = 1.0f)
+    {
         float boostTime = _movementData.boostTime * amount;
         while (boostTime > 0.0f) {
             float boostTime_amount = boostTime / _movementData.boostTime;

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player1Data: {fileID: 11400000, guid: 58f5e0510eb9c1e40989ec47a80c9686, type: 2}
   _player2Data: {fileID: 11400000, guid: a778dd363bd79ce4baee97f61e78abca, type: 2}
-  _players:
+  startPositionsOffset: 4
+  players:
   - {fileID: 0}
   - {fileID: 0}

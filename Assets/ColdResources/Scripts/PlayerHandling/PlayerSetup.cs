@@ -6,7 +6,7 @@ public class PlayerSetup : MonoBehaviour
     [SerializeField] GameObject p1Visual_pf, p2Visual_pf;
     [SerializeField] PlayerFeedbackSetup p1Feedback_pf, p2Feedback_pf;
 
-    public void Init(PlayerDataSO data)
+    public void Init(PlayerDataSO data, Vector3 position)
     {
         GetComponent<PlayerDataReference>().playerData = data;
 

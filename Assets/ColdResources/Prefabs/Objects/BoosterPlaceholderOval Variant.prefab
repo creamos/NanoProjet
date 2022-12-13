@@ -7,21 +7,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 33634588955444057, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 33634588955444057, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 33634588955444058, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33634588955444058, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.9166
       objectReference: {fileID: 0}
     - target: {fileID: 33634588955444058, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 33634588955444058, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9583
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 33634588955444058, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 33634588955444060, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
       propertyPath: m_Name
-      value: BoosterPlaceholderOval
+      value: BoosterPlaceholderOval Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
