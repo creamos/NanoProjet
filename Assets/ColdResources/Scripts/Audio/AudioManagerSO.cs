@@ -53,7 +53,7 @@ public class AudioManagerSO : ScriptableObject
     {
         GameLoaded?.Invoke();
         Debug.Log("[AudioManager] Game Loaded");
-
+        FMODUnity.RuntimeManager.PlayOneShot(AudioEvent_GameLoaded);
 
     }
 
@@ -64,6 +64,7 @@ public class AudioManagerSO : ScriptableObject
     {
         RunStarted?.Invoke();
         Debug.Log("[AudioManager] Run Started");
+        FMODUnity.RuntimeManager.PlayOneShot(AudioEvent_RunStarted);
 
 
     }
@@ -75,6 +76,7 @@ public class AudioManagerSO : ScriptableObject
     {
         RunFinished?.Invoke();
         Debug.Log("[AudioManager] Run Finised");
+        FMODUnity.RuntimeManager.PlayOneShot(AudioEvent_RunFinished);
 
 
     }
@@ -86,6 +88,7 @@ public class AudioManagerSO : ScriptableObject
     {
         PlayersGraze?.Invoke();
         Debug.Log("[AudioManager] Players Graze");
+        FMODUnity.RuntimeManager.PlayOneShot(AudioEvent_PlayersGraze);
 
 
     }
@@ -97,6 +100,7 @@ public class AudioManagerSO : ScriptableObject
     {
         PlayerObstacleCollision?.Invoke();
         Debug.Log("[AudioManager] Player Collided");
+        FMODUnity.RuntimeManager.PlayOneShot(AudioEvent_PlayerObstacleCollision);
 
 
     }
@@ -108,6 +112,7 @@ public class AudioManagerSO : ScriptableObject
     {
         PlayerBoost?.Invoke();
         Debug.Log("[AudioManager] Player Boosted");
+        FMODUnity.RuntimeManager.PlayOneShot(AudioEvent_PlayerBoost);
 
 
     }
