@@ -30,6 +30,9 @@ public class AudioManagerSO : ScriptableObject
     [Tooltip("Event called when a player hit an obstacle.")]
     [Foldout("Events")] public UnityEvent PlayerObstacleCollision;
 
+    [Tooltip("Event called when a player hit an obstacle.")]
+    [Foldout("Events")] public UnityEvent PaceChanged;
+
     #endregion
 
     #region Audio Events
@@ -83,6 +86,15 @@ public class AudioManagerSO : ScriptableObject
 
 
     }
+
+    public void OnPaceChanged ()
+    {
+        PaceChanged?.Invoke();
+        Debug.Log("[AudioManager] Pace Changed");
+        //if (!AudioEvent_RunFinished.IsNull)
+        //    FMODUnity.RuntimeManager.PlayOneShot(AudioEvent_RunFinished);
+    }
+
 
     /// <summary>
     /// Called this method to notify the audiomanager that the players just grazed.
