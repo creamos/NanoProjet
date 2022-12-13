@@ -34,13 +34,13 @@ public class AudioManagerSO : ScriptableObject
 
     #region Audio Events
 
-    [Foldout("FMOD Events")] public EventReference AudioEvent_GameLoaded;
-    [Foldout("FMOD Events")] public EventReference AudioEvent_RunStarted;
-    [Foldout("FMOD Events")] public EventReference AudioEvent_RunFinished;
+    public EventReference AudioEvent_GameLoaded;
+    public EventReference AudioEvent_RunStarted;
+    public EventReference AudioEvent_RunFinished;
 
-    [Foldout("FMOD Events")] public EventReference AudioEvent_PlayersGraze;
-    [Foldout("FMOD Events")] public EventReference AudioEvent_PlayerObstacleCollision;
-    [Foldout("FMOD Events")] public EventReference AudioEvent_PlayerBoost;
+    public EventReference AudioEvent_PlayersGraze;
+    public EventReference AudioEvent_PlayerObstacleCollision;
+    public EventReference AudioEvent_PlayerBoost;
 
     #endregion
 
