@@ -27,6 +27,7 @@ public class AudioManagerEditor : Editor
         SerializedProperty prop_audio_collision     = Prop("AudioEvent_PlayerBoost");
         SerializedProperty prop_audio_boost         = Prop("AudioEvent_PlayerObstacleCollision");
 
+
         var borderSize = 2;
         var style_foldoutHeader = new GUIStyle(EditorStyles.foldoutHeader) {
             border = new RectOffset(borderSize, borderSize, borderSize, borderSize),

@@ -38,7 +38,8 @@ public class GameStarter : MonoBehaviour
         var readyAction = _playerManager[playerID].actions.FindAction("Fire");
 
 
-        readyAction.performed += (_) => OnPlayerReady(playerID);
+        if(playerID == 0) readyAction.performed += OnPlayer1Ready;
+        if(playerID == 1) readyAction.performed += OnPlayer2Ready;
     }
 
     private void OnPlayerLeave (int playerID)
@@ -58,11 +59,21 @@ public class GameStarter : MonoBehaviour
         }
     }
 
+    private void OnPlayer1Ready(InputAction.CallbackContext _) => OnPlayerReady(0);
+    private void OnPlayer2Ready(InputAction.CallbackContext _) => OnPlayerReady(1);
+
     private void OnGameStarted() {
         PlayerMovement movement;
         foreach (PlayerInput player in _playerManager.players)
         {
             if(!player) continue;
+
+
+            var readyAction = player.actions.FindAction("Fire");
+
+
+            readyAction.performed -= OnPlayer1Ready;
+            readyAction.performed -= OnPlayer2Ready;
 
             movement = player.GetComponent<PlayerMovement>();
             movement.enabled = true;
