@@ -25,11 +25,11 @@ public class TargetGroupFeeder : MonoBehaviour
 
     private void TrackPlayer (int playerID)
     {
-        _targetGroupProcessor.targets.Add(_playerManager._players[playerID].transform);
+        _targetGroupProcessor.targets.Add(_playerManager.players[playerID].transform);
     }
 
     private void UntrackPlayer (int playerID)
     {
-        _targetGroupProcessor.targets.Remove(_playerManager._players[playerID].transform);
+        _targetGroupProcessor.targets.Remove(_playerManager.players[playerID].transform);
     }
 }

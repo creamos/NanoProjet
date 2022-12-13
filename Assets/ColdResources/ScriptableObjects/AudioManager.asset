@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cc4541eb5599d4f8bca187d57f8063, type: 3}
+  m_Name: AudioManager
+  m_EditorClassIdentifier: 
+  GameLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+  RunStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  RunFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayersGraze:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerBoost:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerObstacleCollision:
+    m_PersistentCalls:
+      m_Calls: []
+  AudioEvent_GameLoaded:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AudioEvent_RunStarted:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AudioEvent_RunFinished:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AudioEvent_PlayersGraze:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AudioEvent_PlayerObstacleCollision:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AudioEvent_PlayerBoost:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

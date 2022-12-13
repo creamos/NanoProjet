@@ -37,7 +37,7 @@ public class ParallaxManager : MonoBehaviour
 
     private void StartParallax (ParallaxStarter parallax)
     {
-        parallax.transform.position = Vector3.up * (_playersManager._players
+        parallax.transform.position = Vector3.up * (_playersManager.players
             .Select(player => player.transform.position.y)
             .OrderBy(position => position).First()
             + parallax.startOffset);
