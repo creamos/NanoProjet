@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: managedReferences[1288648833535574023].Channel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7526084127140752897, guid: 77e4b0e7cf99b08488daaab22a1f011e, type: 3}
+      propertyPath: managedReferences[1288648833535574029].HapticSettings.GamepadID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526084127171425813, guid: 77e4b0e7cf99b08488daaab22a1f011e, type: 3}
+      propertyPath: managedReferences[1288648833535574030].HapticSettings.GamepadID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7526084128358388360, guid: 77e4b0e7cf99b08488daaab22a1f011e, type: 3}
       propertyPath: m_RootOrder
       value: 0
