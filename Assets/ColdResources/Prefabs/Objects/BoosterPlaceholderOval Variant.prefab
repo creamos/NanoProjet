@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 33634588955444060, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
       propertyPath: m_Name
-      value: BoosterPlaceholderOval
+      value: BoosterPlaceholderOval Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3657682f35148cd49bf7dda584ac89c1, type: 3}
