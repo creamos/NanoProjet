@@ -40,7 +40,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  boostMultiplier: 1.8
+  boostMultiplier: 5
   boostTime: 0.5
   boostProfile:
     serializedVersion: 2
