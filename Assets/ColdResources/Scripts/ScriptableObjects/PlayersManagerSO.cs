@@ -12,6 +12,9 @@ public class PlayersManagerSO : ScriptableObject
 
     public PlayerDataSO _player1Data, _player2Data;
 
+    [Min(0)]
+    public float startPositionsOffset;
+
 
     [ReadOnly]
     public PlayerInput[] players = new PlayerInput[2];
@@ -55,9 +58,13 @@ public class PlayersManagerSO : ScriptableObject
 
     private void InitPlayer (int id, GameObject player)
     {
+        var pos = Vector3.right * startPositionsOffset * (
+            id == 0 ? -1 :
+            id == 1 ? 1 :
+            0);
         switch (id) {
-        case 0: player.GetComponent<PlayerSetup>().Init(_player1Data); break;
-        case 1: player.GetComponent<PlayerSetup>().Init(_player2Data); break;
+        case 0: player.GetComponent<PlayerSetup>().Init(_player1Data, pos); break;
+        case 1: player.GetComponent<PlayerSetup>().Init(_player2Data, pos); break;
         }
     }
 
