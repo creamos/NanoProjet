@@ -1006,11 +1006,11 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 7526084127171425813}
         DebugActive: 0
-        Mode: 0
+        Mode: 1
         ObjectPoolSize: 5
-        MutualizePools: 0
+        MutualizePools: 1
         ParentTransform: {fileID: 0}
-        CachedRecycle: 1
+        CachedRecycle: 0
         ParticlesPrefab: {fileID: 7997841610408167738, guid: 4a80365b1a166fc4cab14154363675ac, type: 3}
         RandomParticlePrefabs: []
         ForceSetActiveOnPlay: 1

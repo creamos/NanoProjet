@@ -28,10 +28,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1496715688, guid: 75b70861390e17f44960eb0d4d54a34b, type: 3}
     - target: {fileID: 881589155517751514, guid: 120f44d41a87c1d48b781e387ef43da6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 881589155517751514, guid: 120f44d41a87c1d48b781e387ef43da6, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -139,7 +135,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 9
   m_Time: 0.5
   m_Parameters:
     serializedVersion: 3
