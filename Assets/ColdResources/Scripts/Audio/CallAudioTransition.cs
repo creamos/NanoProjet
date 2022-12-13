@@ -8,9 +8,11 @@ public class CallAudioTransition : MonoBehaviour
     [SerializeField] AudioManagerSO _audioManagerSO;
     [SerializeField] float _changePhaseTiming;
 
-    [ShowNativeProperty]
-    float remainingTime => waiting ? _changePhaseTiming - _gameManager.GameTime : float.NaN;
+#if UNITY_EDITOR
+    [SerializeField, NaughtyAttributes.ReadOnly]
+    float remainingTime;
     bool waiting = false;
+#endif
 
     private void Awake ()
     {
@@ -24,6 +26,13 @@ public class CallAudioTransition : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
+    private void Update ()
+    {
+        remainingTime = waiting ? _changePhaseTiming -_gameManager.GameTime : float.NaN;
+    }
+#endif
+
     private void WaitForTransition ()
     {
         _gameManager.GameStarted.RemoveListener(WaitForTransition);
@@ -32,10 +41,15 @@ public class CallAudioTransition : MonoBehaviour
 
     IEnumerator CallAudioAtTiming ()
     {
+#if UNITY_EDITOR
         waiting = true;
-        yield return new WaitUntil(() => _gameManager.GameTime >= _changePhaseTiming);
+#endif
 
+        yield return new WaitUntil(() => _gameManager.GameTime >= _changePhaseTiming);
         _audioManagerSO?.OnPaceChanged();
+
+#if UNITY_EDITOR
         waiting = false;
+#endif
     }
 }
