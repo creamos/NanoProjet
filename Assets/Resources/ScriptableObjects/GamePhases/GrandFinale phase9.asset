@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
-  m_Name: IntroAsteroides_2
+  m_Name: GrandFinale phase9
   m_EditorClassIdentifier: 
-  startTime: 107
-  endTime: 117
+  startTime: 163
+  endTime: 175
   encounters:
   - weight: 1
-    encounter: {fileID: 5639326618178397314, guid: ee5cefb1d6d7faf47a31fb6e68d2cadf, type: 3}
+    encounter: {fileID: 7911963012450580679, guid: 6dfc9b22c0de8c84698fb13ec94781f1, type: 3}
     delay: {x: 2, y: 2.5}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
-    encounter: {fileID: 2454901928414694561, guid: ddfe126739d2bf347a17f55d8509692a, type: 3}
+    encounter: {fileID: 124169643548885614, guid: 2db7459cf2d13554ea3847c02c2888c9, type: 3}
     delay: {x: 2, y: 2.5}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
-    encounter: {fileID: 4136166379655199022, guid: a8dd8db140da3ce4daedf962517c0867, type: 3}
+    encounter: {fileID: 6249789658536170270, guid: 007b7e1616b8b35408bfc4e11527eeab, type: 3}
     delay: {x: 2, y: 2.5}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
-    encounter: {fileID: 176230206609091105, guid: f6161394b0b009544b9c2ff2f221843b, type: 3}
-    delay: {x: 2, y: 2.5}
+    encounter: {fileID: 6249789658536170270, guid: 48e1724b4e16db44ab1ed10de686a6b5, type: 3}
+    delay: {x: 3, y: 3.5}
     rangePosition: {x: 0.5, y: 0.5}
-  - weight: 1
-    encounter: {fileID: 3722501869630273827, guid: 719f6d0e04ad9dd44b79ee705444c2ea, type: 3}
-    delay: {x: 2, y: 2.5}
+  - weight: 2
+    encounter: {fileID: 5098168943830161847, guid: 258a9cdf3d9b6024d9d45a9524fe1b39, type: 3}
+    delay: {x: 3, y: 3.5}
     rangePosition: {x: 0.5, y: 0.5}

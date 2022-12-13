@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
-  m_Name: IntroAsteMeteo
+  m_Name: IntroAsteMeteo_1 phase6
   m_EditorClassIdentifier: 
-  startTime: 117
-  endTime: 117
+  startTime: 118
+  endTime: 118
   encounters:
   - weight: 1
     encounter: {fileID: 2444524902271830850, guid: 0d081600c607f4649beff7b36f0ddcab, type: 3}
