@@ -51,6 +51,7 @@ public class AudioManager : MonoBehaviour
         e_instMusic.getDescription(out e_descHardmode);
         PARAMETER_DESCRIPTION p_descrHardmode;
         e_descHardmode.getParameterDescriptionByName("Hardmode", out p_descrHardmode);
+        p_idHardmode = p_descrHardmode.id;
     }
 
     public void ChangeMusicToHardmode()
