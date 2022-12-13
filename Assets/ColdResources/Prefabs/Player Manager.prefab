@@ -103,7 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac864388539389b48885aee9a3a323aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 11400000, guid: ce97fb86fa7615640bf169737e8b5d96, type: 2}
   GameStarted:
     m_PersistentCalls:
       m_Calls: []
-  _playerManager: {fileID: 11400000, guid: ce97fb86fa7615640bf169737e8b5d96, type: 2}
+  _debugSoloMode: 0

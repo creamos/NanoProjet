@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private InputAction _moveAction;
     private InputAction _fireAction;
 
+    static float _lowestPosition;
+
     private void Awake() {
         _playerInput = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -52,13 +54,16 @@ public class PlayerMovement : MonoBehaviour
             float add_boost = _vel.y * _boostAmount * (_movementData.boostMultiplier - 1.0f);
             _vel.y += add_boost + add_knockback;
         }
-        _pos = _pos + _vel * Time.deltaTime;
+        _pos += _vel * Time.deltaTime;
+        _pos.y = Mathf.Min(_pos.y, _lowestPosition + _boundsData.boundsHeight);
 
         if (_boundsData) {
-            float clamped_horizontal = Mathf.Clamp(_pos.x, -_boundsData.boundsWidth * 0.5f, _boundsData.boundsWidth * 0.5f);
+            float clamped_horizontal = Mathf.Clamp(_pos.x, - _boundsData.boundsWidth * 0.5f, _boundsData.boundsWidth * 0.5f);
             _pos.x = Mathf.Lerp(_pos.x, clamped_horizontal, _boundsSmoothing * Time.deltaTime);
         }
         transform.position = _pos;
+
+        if (_pos.y < _lowestPosition) _lowestPosition = _pos.y;
     }
 
     private void FixedUpdate() {

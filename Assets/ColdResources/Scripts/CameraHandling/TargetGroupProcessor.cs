@@ -37,10 +37,6 @@ public class TargetGroupProcessor : MonoBehaviour
 
     }
 
-    float smoothVel;
-
-    [SerializeField, ReadOnly] float _baitPos, _smoothedBaitPos;
-    [SerializeField, Range(0,1)] float _lerpAmount;
 
     private void Update ()
     {
@@ -49,9 +45,8 @@ public class TargetGroupProcessor : MonoBehaviour
         case 2:
             var lowest = targetByDst.First();
             var highest = targetByDst.Last();
-            _baitPos = (lowest + highest) / 2f;
-            _smoothedBaitPos = Mathf.SmoothDamp(_bait.position.y, _baitPos, ref smoothVel, 1f);
-            _bait.position = Vector3.up * _baitPos;
+            var baitPos = (lowest + highest) / 2f;
+            _bait.position = Vector3.up * baitPos;
 
             _targetGroup.m_Targets[0].radius = (highest - lowest)/2f + 1f;
             break;
