@@ -12,42 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
   m_Name: IntroMeteorites_2
   m_EditorClassIdentifier: 
-  startTime: 25
-  endTime: 30
+  startTime: 20
+  endTime: 27
   encounters:
   - weight: 1
     encounter: {fileID: 6249789658536170270, guid: d4a4b07564105bf48bf593849bdb6f7b, type: 3}
-    delay: {x: 1.5, y: 1.5}
-    rangePosition: {x: 0.5, y: 0.5}
-  - weight: 1
-    encounter: {fileID: 7552381842728241481, guid: 6250ffc219f63c8419d2476e9d746c30, type: 3}
-    delay: {x: 1.5, y: 1.5}
+    delay: {x: 1.5, y: 2}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
     encounter: {fileID: 8849477346519635248, guid: bc4b05d47fedfdd4abaa218d5aad7625, type: 3}
-    delay: {x: 1.5, y: 1.5}
+    delay: {x: 1.5, y: 2}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
     encounter: {fileID: 4169735977387791438, guid: d2d1150d12c093142b01b0f124bf94e0, type: 3}
-    delay: {x: 2, y: 3}
+    delay: {x: 1.5, y: 2}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
     encounter: {fileID: 7911963012450580679, guid: 6dfc9b22c0de8c84698fb13ec94781f1, type: 3}
-    delay: {x: 2, y: 3}
+    delay: {x: 1.5, y: 2}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
     encounter: {fileID: 2057954489708199804, guid: c29fb12147ed01741b0151334e972aff, type: 3}
-    delay: {x: 2, y: 3}
+    delay: {x: 1.5, y: 2}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
-    encounter: {fileID: 4029248601531301572, guid: c664f2a05a2d2fc4aa639cb14d1eb203, type: 3}
-    delay: {x: 2, y: 3}
+    encounter: {fileID: 2057954489708199804, guid: 5ee26d1b4568c7941a7e5053769e4143, type: 3}
+    delay: {x: 1.5, y: 2}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
-    encounter: {fileID: 7552381842728241481, guid: 6250ffc219f63c8419d2476e9d746c30, type: 3}
-    delay: {x: 1.5, y: 1.5}
-    rangePosition: {x: 0, y: 0.5}
+    encounter: {fileID: 6249789658536170270, guid: 007b7e1616b8b35408bfc4e11527eeab, type: 3}
+    delay: {x: 1.5, y: 2}
+    rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
-    encounter: {fileID: 7552381842728241481, guid: 6250ffc219f63c8419d2476e9d746c30, type: 3}
-    delay: {x: 1.5, y: 1.5}
-    rangePosition: {x: 0.5, y: 1}
+    encounter: {fileID: 8849477346519635248, guid: 72d05a53138bba4408e320291cf2fc89, type: 3}
+    delay: {x: 1.5, y: 2}
+    rangePosition: {x: 0.5, y: 0.5}
