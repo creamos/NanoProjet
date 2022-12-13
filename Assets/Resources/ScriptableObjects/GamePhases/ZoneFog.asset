@@ -14,4 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 140
   endTime: 160
-  encounters: []
+  encounters:
+  - weight: 2
+    encounter: {fileID: 1637469957266275658, guid: 18576b4a6b3d079479ba8299c078812d, type: 3}
+    delay: {x: 9.5, y: 10}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 6249789658536170270, guid: d4a4b07564105bf48bf593849bdb6f7b, type: 3}
+    delay: {x: 0.5, y: 1}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 877362736080325723, guid: 27731a0d49c375f47961978a882ebe47, type: 3}
+    delay: {x: 2.5, y: 3}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 3158362438017914192, guid: cefa94c6deef7004484839a758ce3549, type: 3}
+    delay: {x: 2.5, y: 3}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 6249789658536170270, guid: 4b0ff44c2c17650488476a76e430a2a5, type: 3}
+    delay: {x: 2.5, y: 3}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 3217062332848872902, guid: f51698beed06f654a971f2e8893796f8, type: 3}
+    delay: {x: 2.5, y: 3}
+    rangePosition: {x: 0.5, y: 0.5}
