@@ -42,6 +42,8 @@ public class ParallaxPaner : MonoBehaviour
         _offset = cam.transform.position.y;
     }
 
+
+
     private void Update ()
     {
         float t = (cam.transform.position.y - _offset) * (1-parallaxAmount);
@@ -57,7 +59,7 @@ public class ParallaxPaner : MonoBehaviour
             else if (t < startPos - length) startPos -= length;
         }
 
-        if (isLeaving && t > startPos + length)
+        if (isLeaving && (t > startPos + length) || (t < startPos - length))
             Destroy(gameObject);
     }
 }
