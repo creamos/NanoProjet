@@ -140,7 +140,7 @@ public class ObjectsGenerator : MonoBehaviour
     }
 
     public void OnEndPhase(GamePhaseDataSO phase) {
-        if (phase && phase != _phaseData) {
+        if (phase = _phaseData) {
             StopGenerating();
         } 
     }
