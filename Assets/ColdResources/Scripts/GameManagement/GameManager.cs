@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayersManagerSO _playerManagerSO;
 
+    public UnityEvent GameLoaded;
     public UnityEvent GameStarted;
+    public UnityEvent RunFinished;
 
     public UnityEvent<GamePhaseDataSO> PhaseStarted, PhaseEnded;
 
@@ -30,6 +32,11 @@ public class GameManager : MonoBehaviour
 
     float _currentPhaseStartTime => startTime + _phases[currentPhaseID].startTime;
     float _currentPhaseEndTime => _currentPhaseStartTime + _phases[currentPhaseID].duration;
+
+    private void Start ()
+    {
+        GameLoaded?.Invoke();
+    }
 
     [Button("Load Game Phases")]
     void LoadGamePhases ()
