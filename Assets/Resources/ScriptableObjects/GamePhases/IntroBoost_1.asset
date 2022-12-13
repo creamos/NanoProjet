@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
   m_Name: IntroBoost_1
   m_EditorClassIdentifier: 
-  startTime: 4
-  endTime: 16
+  startTime: 3
+  endTime: 15
   encounters:
   - weight: 1
     encounter: {fileID: 1070861010859674884, guid: 3f287e89d690a5344a9bac9c67b8c5ff, type: 3}
