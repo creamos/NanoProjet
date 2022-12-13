@@ -45,6 +45,7 @@ public class ParallaxHelper : MonoBehaviour
                 Sprite sprite = sprites[i];
                 totalLength += sprite.bounds.size.y;
                 spriteRenderer = new GameObject("texture - " + i, typeof(SpriteRenderer)).GetComponent<SpriteRenderer>();
+                spriteRenderer.gameObject.layer = gameObject.layer;
                 spriteRenderer.sortingOrder = layerOrder;
                 spriteRenderer.sprite = sprite;
 
@@ -64,6 +65,7 @@ public class ParallaxHelper : MonoBehaviour
             for (int i = 0; i < sprites.Length; i++) {
                 Sprite sprite = sprites[i];
                 spriteRenderer = new GameObject("texture Before - " + i, typeof(SpriteRenderer)).GetComponent<SpriteRenderer>();
+                spriteRenderer.gameObject.layer = gameObject.layer;
                 spriteRenderer.sortingOrder = layerOrder;
                 spriteRenderer.sprite = sprite;
 
@@ -83,6 +85,7 @@ public class ParallaxHelper : MonoBehaviour
             for (int i = 0; i < sprites.Length; i++) {
                 Sprite sprite = sprites[i];
                 spriteRenderer = new GameObject("texture After - " + i, typeof(SpriteRenderer)).GetComponent<SpriteRenderer>();
+                spriteRenderer.gameObject.layer = gameObject.layer;
                 spriteRenderer.sortingOrder = layerOrder;
                 spriteRenderer.sprite = sprite;
 

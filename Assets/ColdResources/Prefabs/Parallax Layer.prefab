@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3113343021723355682}
   - component: {fileID: 3113343021723355681}
   - component: {fileID: 3113343021723355708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Parallax Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxAmount: 0.5
   length: 0
-  startOffset: 0
   isArriving: 1
   isLooping: 1
   isLeaving: 0
