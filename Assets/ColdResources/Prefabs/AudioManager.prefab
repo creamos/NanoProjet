@@ -55,11 +55,11 @@ MonoBehaviour:
     Path: event:/Music
   e_refBoost:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: C'est normal j'ai pas encore fait le son
+      Data1: 426676331
+      Data2: 1190254573
+      Data3: -306975616
+      Data4: 1387835338
+    Path: event:/BoostCircle
   e_refSlow:
     Guid:
       Data1: 0
