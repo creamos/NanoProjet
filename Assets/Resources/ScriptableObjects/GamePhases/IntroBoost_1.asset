@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
   m_Name: IntroBoost_1
   m_EditorClassIdentifier: 
-  startTime: 5
-  endTime: 20
+  startTime: 4
+  endTime: 16
   encounters:
   - weight: 1
     encounter: {fileID: 1070861010859674884, guid: 3f287e89d690a5344a9bac9c67b8c5ff, type: 3}
-    delay: {x: 7.5, y: 8}
+    delay: {x: 4, y: 4.5}
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 1
     encounter: {fileID: 3200379158989347030, guid: a5da83b3b0533ba45ae35d57c055d414, type: 3}
-    delay: {x: 7.5, y: 8}
+    delay: {x: 4, y: 4.5}
     rangePosition: {x: 0.5, y: 0.5}
