@@ -193,3 +193,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1Visual_pf: {fileID: 2459447046112617231, guid: cd13372aca70e504c993dbe07d820f6f, type: 3}
   p2Visual_pf: {fileID: 2454618309234458739, guid: 74d5a2174de54274d977b128a85b60ce, type: 3}
+  p1Feedback_pf: {fileID: 7358940623473269333, guid: e02a8381be16eb345a8b98ba00422a07, type: 3}
+  p2Feedback_pf: {fileID: 507634635689071175, guid: 44d2da3516e400040b9793a2e472d830, type: 3}
