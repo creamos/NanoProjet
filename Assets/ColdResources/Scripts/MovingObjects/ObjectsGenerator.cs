@@ -94,8 +94,10 @@ public class ObjectsGenerator : MonoBehaviour
         else {
             foreach (var player in _playersManager.players)
             {
-                Vector2 pos = player.transform.position;
-                if (pos.y < target_pos.y) target_pos = pos;
+                if (player) {
+                    Vector2 pos = player.transform.position;
+                    if (pos.y < target_pos.y) target_pos = pos;
+                }
             }
         }
         target_pos.x = horizontal_pos;
@@ -120,8 +122,10 @@ public class ObjectsGenerator : MonoBehaviour
         else {
             foreach (var player in _playersManager.players)
             {
-                Vector2 pos = player.transform.position;
-                if (pos.y > target_pos.y) target_pos = pos;
+                if (player) {
+                    Vector2 pos = player.transform.position;
+                    if (pos.y > target_pos.y) target_pos = pos;
+                }
             }
         }
         target_pos.x = 0.0f;
@@ -131,10 +135,8 @@ public class ObjectsGenerator : MonoBehaviour
     }
 
     public void OnStartPhase(GamePhaseDataSO phase) {
-        if (phase && phase != _phaseData) {
-            _phaseData = phase;
-            StartGenerating();
-        }
+        _phaseData = phase;
+        StartGenerating();
     }
 
     public void OnEndPhase(GamePhaseDataSO phase) {
