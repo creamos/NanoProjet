@@ -15,11 +15,11 @@ MonoBehaviour:
   startTime: 5
   endTime: 20
   encounters:
-  - weight: 0
+  - weight: 1
     encounter: {fileID: 1070861010859674884, guid: 3f287e89d690a5344a9bac9c67b8c5ff, type: 3}
-    delay: {x: 3, y: 3}
+    delay: {x: 0, y: 3}
     rangePosition: {x: 0.5, y: 0.5}
-  - weight: 0
+  - weight: 1
     encounter: {fileID: 3200379158989347030, guid: a5da83b3b0533ba45ae35d57c055d414, type: 3}
-    delay: {x: 4.992097, y: 4.992097}
+    delay: {x: 0, y: 4}
     rangePosition: {x: 0.5, y: 0.5}

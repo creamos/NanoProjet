@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
+  m_Name: ZoneAstroBoost
+  m_EditorClassIdentifier: 
+  startTime: 35
+  endTime: 95
+  encounters:
+  - weight: 1
+    encounter: {fileID: 124169643548885614, guid: 2db7459cf2d13554ea3847c02c2888c9, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 7409219573738488521, guid: f268a399181295044a599bfc4534ff95, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 4702313162533988756, guid: 1402b74e46198fa4f95bb9a065a7ed7e, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 8371474615284407448, guid: 9bce97ad6c4e2084d9bbd183bce698a2, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 6641285523139638018, guid: f5023c8efd522284584abad0834531c8, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 3217062332848872902, guid: f51698beed06f654a971f2e8893796f8, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 1838354310613750812, guid: b3b6fef1102d47346bdd44b10f80a741, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 4901776380103809755, guid: 892350bcd63d14b47b157b9c8be275a6, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 2880684035819778127, guid: 8f4dc7fda494d0243a179fea0583b5a7, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 2320576895720822096, guid: f1570c8adcb60124f882e00294adb610, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 6249789658536170270, guid: d4a4b07564105bf48bf593849bdb6f7b, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 7552381842728241481, guid: 6250ffc219f63c8419d2476e9d746c30, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 8849477346519635248, guid: bc4b05d47fedfdd4abaa218d5aad7625, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 8849477346519635248, guid: 72d05a53138bba4408e320291cf2fc89, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 4169735977387791438, guid: d2d1150d12c093142b01b0f124bf94e0, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 7911963012450580679, guid: 6dfc9b22c0de8c84698fb13ec94781f1, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 2057954489708199804, guid: c29fb12147ed01741b0151334e972aff, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
+  - weight: 1
+    encounter: {fileID: 2057954489708199804, guid: 5ee26d1b4568c7941a7e5053769e4143, type: 3}
+    delay: {x: 1, y: 1.5}
+    rangePosition: {x: 0.5, y: 0.5}
