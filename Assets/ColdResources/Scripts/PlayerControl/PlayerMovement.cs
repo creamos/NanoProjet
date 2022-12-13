@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerDataReference))]
 public class PlayerMovement : MonoBehaviour
-{    
+{
+    public UnityEvent GrazeEvent, CollisionEvent, BoostEvent;
+
     private PlayerInput _playerInput;
     private Rigidbody2D _rigidbody;
+
+    private PlayerDataReference _data;
 
     [Header("Bounds")]
     [SerializeField] private BoundsDataSO _boundsData;
@@ -37,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake() {
         _playerInput = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _data = GetComponent<PlayerDataReference>();
     }
 
     private void Start() {
@@ -74,10 +81,15 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Obstacle") && !_hitObstacles.Contains(other.transform)) {
             _hitObstacles.Add(other.transform);
             ApplyKnockback();
+            CollisionEvent?.Invoke();
         }
         if (other.CompareTag("Booster") && !_hitBoosters.Contains(other.transform)) {
             _hitBoosters.Add(other.transform);
             ApplyBoost();
+            BoostEvent?.Invoke();
+        }
+        if (other.CompareTag("Player") && _data.playerData && _data.ID == 0) {
+            GrazeEvent?.Invoke();
         }
     }
 

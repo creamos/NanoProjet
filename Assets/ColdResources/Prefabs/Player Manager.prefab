@@ -106,5 +106,17 @@ MonoBehaviour:
   _playerManager: {fileID: 11400000, guid: ce97fb86fa7615640bf169737e8b5d96, type: 2}
   GameStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 0b736cece94e70b4ba762f37b232c71f, type: 2}
+        m_TargetAssemblyTypeName: AudioManagerSO, Assembly-CSharp
+        m_MethodName: OnRunStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _debugSoloMode: 0

@@ -24,8 +24,8 @@ public class PlayerJoiningUI : MonoBehaviour
         _toggleP1.isOn = _gameStarter.playersReady[0];
         _toggleP2.isOn = _gameStarter.playersReady[1];
 
-        string p1text = _playersManagerSO._players[0] != null ? (_gameStarter.playersReady[0] ? "Ready" : "Not Ready") : "None";
-        string p2text = _playersManagerSO._players[1] != null ? (_gameStarter.playersReady[1] ? "Ready" : "Not Ready") : "None";
+        string p1text = _playersManagerSO.players[0] != null ? (_gameStarter.playersReady[0] ? "Ready" : "Not Ready") : "None";
+        string p2text = _playersManagerSO.players[1] != null ? (_gameStarter.playersReady[1] ? "Ready" : "Not Ready") : "None";
 
         _labelP1.text = $"Player 1 : {p1text}";
         _labelP2.text = $"Player 2 : {p2text}";
