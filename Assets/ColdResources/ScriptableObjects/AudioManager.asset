@@ -39,11 +39,11 @@ MonoBehaviour:
     Path: 
   AudioEvent_RunStarted:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1151855312
+      Data2: 1329904940
+      Data3: -1292990306
+      Data4: -618906269
+    Path: event:/Fart
   AudioEvent_RunFinished:
     Guid:
       Data1: 0

@@ -1593,6 +1593,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6875670175708011503, guid: 89f9cdd2f3dad7d4a8ba931e4d0ebc8a, type: 3}
+      propertyPath: _debugSoloMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875670175708011503, guid: 89f9cdd2f3dad7d4a8ba931e4d0ebc8a, type: 3}
       propertyPath: GameStarted.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
