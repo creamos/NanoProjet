@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
   m_Name: TestGeneratorPhase
   m_EditorClassIdentifier: 
-  startTime: 0
-  endTime: 100
+  startTime: 5
+  endTime: 20
   encounters:
   - weight: 1
     encounter: {fileID: 124169643548885614, guid: 2db7459cf2d13554ea3847c02c2888c9, type: 3}
