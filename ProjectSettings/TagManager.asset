@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - Booster
   - GameplayCamera
+  - BackgroundCamera
   layers:
   - Default
   - TransparentFX

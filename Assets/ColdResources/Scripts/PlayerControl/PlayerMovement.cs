@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -96,6 +97,13 @@ public class PlayerMovement : MonoBehaviour
 
                 Debug.Log("Boost : " + boostAmount);
                 ApplyBoost(boostAmount);
+
+                var emitter = booster.GetComponentInChildren<StudioEventEmitter>();
+                //if (emitter) {
+                //    Debug.LogWarning("Play Boost Sound");
+                //    emitter.Play();
+                //}
+
                 BoostEvent?.Invoke();
                 break;
             }

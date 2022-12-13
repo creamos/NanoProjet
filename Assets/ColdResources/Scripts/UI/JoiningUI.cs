@@ -22,10 +22,24 @@ public class JoiningUI : MonoBehaviour
     private void Start() {
         for (int i = 0; i < _playersManagerSO.players.Length; i++)
         {
-            float offset = _playersManagerSO.startPositionsOffset * (i - 0.5f) * 40.0f;
+            float offset = _playersManagerSO.startPositionsOffset * (i - 0.5f) * 80f;
             Vector2 pos = _imagesOrigins[i].position;
             pos.x += offset;
             _imagesOrigins[i].position = pos;
+
+            /*
+             
+            var cam = GameObject.FindGameObjectWithTag("BackgroundCamera").GetComponent<Camera>();
+            var pos = cam.ScreenToWorldPoint(_imagesOrigins[i].position);
+
+            float offset = (i==0?-1:1) * _playersManagerSO.startPositionsOffset;
+            
+            pos.x += offset;
+
+
+            _imagesOrigins[i].position = cam.WorldToScreenPoint(pos);
+             
+             */
         }
     }
 
