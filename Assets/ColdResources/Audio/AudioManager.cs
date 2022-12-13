@@ -9,14 +9,11 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager Instance { get { return _instance; } }
 
-    private void Awake()
+    private void Awake ()
     {
-        if (_instance != null && _instance != this)
-        {
+        if (_instance != null && _instance != this) {
             Destroy(this.gameObject);
-        }
-        else
-        {
+        } else {
             _instance = this;
         }
     }
@@ -43,7 +40,7 @@ public class AudioManager : MonoBehaviour
     PARAMETER_ID p_idHardmode;
 
 
-    void Start()
+    void Start ()
     {
         // Init music event and fetch hardmode parameter
         e_instMusic = RuntimeManager.CreateInstance(e_refMusic);
@@ -54,55 +51,55 @@ public class AudioManager : MonoBehaviour
         p_idHardmode = p_descrHardmode.id;
     }
 
-    public void ChangeMusicToHardmode()
+    public void ChangeMusicToHardmode ()
     {
-        e_instMusic.setParameterByID(p_idHardmode, 1);  
+        e_instMusic.setParameterByID(p_idHardmode, 1);
     }
 
-    public void StartGlobalFadeOut(float duration)
+    public void StartGlobalFadeOut (float duration)
     {
         isGlobalFadeOutActive = true;
         globalFadeOutDuration = duration;
     }
 
-    public void StartMusic()
+    public void StartMusic ()
     {
-        if (!IsPlaying(e_instMusic))
-        {
+        if (!IsPlaying(e_instMusic)) {
             e_instMusic.start();
         }
     }
 
-    public void StopMusic()
+    public void StopMusic ()
     {
-        if (IsPlaying(e_instMusic))
-        {
+        if (IsPlaying(e_instMusic)) {
             e_instMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             e_instMusic.release();
         }
     }
 
-    public void PlayBoostSound()
+    public void PlayBoostSound ()
     {
-        e_instBoost = RuntimeManager.CreateInstance(e_refBoost);
+        try {
+            e_instBoost = RuntimeManager.CreateInstance(e_refBoost);
+        } catch { };
 
-        if (!IsPlaying(e_instBoost))
-        {
+        if (!IsPlaying(e_instBoost)) {
             e_instBoost.start();
         }
     }
 
-    public void PlaySlowSound()
+    public void PlaySlowSound ()
     {
-        e_instSlow = RuntimeManager.CreateInstance(e_refSlow);
+        try {
+            e_instSlow = RuntimeManager.CreateInstance(e_refSlow);
+        } catch { };
 
-        if (!IsPlaying(e_instSlow))
-        {
+        if (!IsPlaying(e_instSlow)) {
             e_instSlow.start();
         }
     }
 
-    bool IsPlaying(EventInstance instance)
+    bool IsPlaying (EventInstance instance)
     {
         PLAYBACK_STATE state;
         instance.getPlaybackState(out state);
@@ -110,17 +107,13 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    void Update()
+    void Update ()
     {
-        if (isGlobalFadeOutActive)
-        {
-            if (globalFadeOutValue > 0)
-            {
+        if (isGlobalFadeOutActive) {
+            if (globalFadeOutValue > 0) {
                 globalFadeOutValue -= Time.deltaTime / globalFadeOutDuration;
                 RuntimeManager.StudioSystem.setParameterByName("MasterVolume", globalFadeOutValue);
-            }
-            else
-            {
+            } else {
                 globalFadeOutValue = 1f;
                 isGlobalFadeOutActive = false;
             }

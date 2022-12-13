@@ -444,7 +444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cdf39f1668ef646876bdba5eabe7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playersManager: {fileID: 11400000, guid: ce97fb86fa7615640bf169737e8b5d96, type: 2}
   _endWaitTime: 3
 --- !u!1001 &1466709889
 PrefabInstance:
@@ -713,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098150276329954714, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
       propertyPath: _phases.Array.size
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3098150276329954714, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
       propertyPath: _phases.Array.data[0]
@@ -743,13 +742,25 @@ PrefabInstance:
       propertyPath: _phases.Array.data[6]
       value: 
       objectReference: {fileID: 11400000, guid: 798dda69879a1ed4997a0301909c9eef, type: 2}
+    - target: {fileID: 3098150276329954714, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: _phases.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 495812f69f9baaa40966a505a7b2a3d2, type: 2}
+    - target: {fileID: 3098150276329954714, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: _phases.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4906dd93ad7bb2b48948fe42ba5271b0, type: 2}
+    - target: {fileID: 3098150276329954714, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: _phases.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53ca47a94408a1e45bdf2058f0eb6f93, type: 2}
     - target: {fileID: 5425555939207806531, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
       propertyPath: m_Name
       value: Scene Setup
       objectReference: {fileID: 0}
     - target: {fileID: 8472852933993917264, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
       propertyPath: _debugSoloMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}

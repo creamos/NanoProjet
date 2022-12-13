@@ -8,11 +8,16 @@ public class ParallaxManager : MonoBehaviour
 {
     [SerializeField] PlayersManagerSO _playersManager;
     GameManager _gameManager;
-    ParallaxStarter[] _parallaxes;
+    ParallaxStarter[] _parallaxesWithStart, _parallaxesWithEnd;
     private void Awake ()
     {
-        _parallaxes = FindObjectsOfType<ParallaxStarter>(true)
+        var parallaxes = FindObjectsOfType<ParallaxStarter>(true)
             .OrderBy(parallax => parallax.startTime).ToArray();
+
+        _parallaxesWithStart = parallaxes.Where(parallax => parallax.asStartTime)
+            .OrderBy(parallax => parallax.startTime).ToArray();
+        _parallaxesWithEnd = parallaxes.Where(parallax => parallax.asEndTime)
+            .OrderBy(parallax => parallax.asEndTime).ToArray();
 
         _gameManager = FindObjectOfType<GameManager>();
     }
@@ -25,24 +30,45 @@ public class ParallaxManager : MonoBehaviour
     {
         Debug.Log("Parallax Handling Started");
         StartCoroutine(ParallaxLoadRoutine());
+        StartCoroutine(ParallaxUnloadRoutine());
     }
 
     private IEnumerator ParallaxLoadRoutine ()
     {
-        for (int i = 0; i < _parallaxes.Length; i++) {
-            yield return new WaitUntil(() => _parallaxes[i].startTime <= _gameManager.GameTime);
-            StartParallax(_parallaxes[i]);
+        for (int i = 0; i < _parallaxesWithStart.Length; i++) {
+            yield return new WaitUntil(() => _parallaxesWithStart[i].startTime <= _gameManager.GameTime);
+            StartParallax(_parallaxesWithStart[i]);
+        }
+    }
+
+    private IEnumerator ParallaxUnloadRoutine ()
+    {
+        for (int i = 0; i < _parallaxesWithEnd.Length; i++) {
+            yield return new WaitUntil(() => _parallaxesWithEnd[i].endTime <= _gameManager.GameTime);
+            EndParallax(_parallaxesWithEnd[i]);
         }
     }
 
     private void StartParallax (ParallaxStarter parallax)
     {
-        parallax.transform.position = Vector3.up * (_playersManager.players
-            .Where(player => player)
-            .Select(player => player.transform.position.y)
-            .OrderBy(position => position).First()
-            + parallax.startOffset);
+        if (parallax) {
 
-        parallax.gameObject.SetActive(true);
+            parallax.transform.position = Vector3.up * (Camera.main.transform.position.y
+                + parallax.startOffset);
+
+            parallax.gameObject.SetActive(true);
+        }
+    }
+
+
+    private void EndParallax (ParallaxStarter parallax)
+    {
+        if (parallax) {
+
+            foreach (var p in parallax.GetComponentsInChildren<ParallaxPaner>()) {
+                p.isArriving = false;
+                p.isLeaving = true;
+            }
+        }
     }
 }

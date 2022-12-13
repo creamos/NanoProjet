@@ -90,7 +90,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 881589155517751512, guid: 120f44d41a87c1d48b781e387ef43da6, type: 3}
   m_PrefabInstance: {fileID: 3327182600160665771}
   m_PrefabAsset: {fileID: 0}
---- !u!96 &2030786133
+--- !u!96 &6974512521277632580
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -162,24 +162,24 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26666668, g: 0.8000001, b: 0.69803923, a: 1}
-      key1: {r: 1, g: 0.8176625, b: 0.5981132, a: 1}
-      key2: {r: 1, g: 0.6231828, b: 0.1641509, a: 0}
+      key0: {r: 0.20000002, g: 0.8313726, b: 0.73333335, a: 1}
+      key1: {r: 0.8000001, g: 0.90196085, b: 0.6509804, a: 0}
+      key2: {r: 0.909804, g: 0.7137255, b: 0.48235297, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 43947
-      ctime1: 65535
-      ctime2: 65535
+      ctime0: 12529
+      ctime1: 22359
+      ctime2: 33539
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
-      atime1: 65535
+      atime0: 16191
+      atime1: 44911
       atime2: 0
       atime3: 0
       atime4: 0
@@ -187,7 +187,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
