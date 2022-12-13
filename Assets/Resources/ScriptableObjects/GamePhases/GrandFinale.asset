@@ -33,5 +33,5 @@ MonoBehaviour:
     rangePosition: {x: 0.5, y: 0.5}
   - weight: 2
     encounter: {fileID: 5098168943830161847, guid: 258a9cdf3d9b6024d9d45a9524fe1b39, type: 3}
-    delay: {x: 9.5, y: 10}
+    delay: {x: 5.5, y: 6}
     rangePosition: {x: 0.5, y: 0.5}
