@@ -636,7 +636,7 @@ MonoBehaviour:
     - rid: 1288648833535574029
       type: {class: MMF_NVEmphasis, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.NiceVibrations}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1535396570
         Label: Haptic Emphasis
         ChannelMode: 0
@@ -1271,7 +1271,7 @@ MonoBehaviour:
     - rid: 1288648833535574030
       type: {class: MMF_NVContinuous, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.NiceVibrations}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1287109325
         Label: Haptic Continuous
         ChannelMode: 0
