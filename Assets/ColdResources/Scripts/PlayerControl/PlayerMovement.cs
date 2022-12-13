@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, ReadOnly] private List<Transform> _hitObstacles;
     [SerializeField, ReadOnly] private List<Booster> _hitBoosters;
 
+    [Space]
+    [SerializeField] private SpriteRenderer _boostPrompt;
+
     private Vector2 _pos;
     private Vector2 _vel;
     //Modifiers
@@ -89,6 +92,8 @@ public class PlayerMovement : MonoBehaviour
     {
         foreach (var booster in _hitBoosters) {
             if (booster.Boost(_data.ID, _pos.y, out float boostAmount)) {
+                _boostPrompt.enabled = false;
+
                 Debug.Log("Boost : " + boostAmount);
                 ApplyBoost(boostAmount);
                 BoostEvent?.Invoke();
@@ -105,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
             CollisionEvent?.Invoke();
         }
         if (other.CompareTag("Booster") && other.TryGetComponent(out Booster booster) && !_hitBoosters.Contains(booster)) {
+            _boostPrompt.enabled = true;
             _hitBoosters.Add(booster);
         }
         if (other.CompareTag("Player") && _data.playerData && _data.ID == 0) {
@@ -117,7 +123,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Obstacle") && _hitObstacles.Contains(other.transform)) {
             _hitObstacles.Remove(other.transform);
         }
-        if (other.CompareTag("Booster") && TryGetComponent(out Booster booster) && _hitBoosters.Contains(booster)) {
+        if (other.CompareTag("Booster") && other.TryGetComponent(out Booster booster) && _hitBoosters.Contains(booster)) {
+            _boostPrompt.enabled = false;
             _hitBoosters.Remove(booster);
         }
     }

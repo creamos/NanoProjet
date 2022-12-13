@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f50c7d0ec4fada4083cb9fa8950f353, type: 3}
-  m_Name: Phase 3
+  m_Name: IntroMeteorites_1
   m_EditorClassIdentifier: 
-  startTime: 40
-  endTime: 60
+  startTime: 17
+  endTime: 17
   encounters:
-  - encounter: {fileID: 0}
-    delay: {x: 4, y: 7}
+  - weight: 1
+    encounter: {fileID: 2420418401582465026, guid: df6bfc2c6d5dbd34ebedbcd60416d5dc, type: 3}
+    delay: {x: 0, y: 0}
     rangePosition: {x: 0.5, y: 0.5}

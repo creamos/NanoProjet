@@ -19,12 +19,11 @@ public class ParallaxPaner : MonoBehaviour
     void AutoLength ()
     {
         length = GetComponent<SpriteRenderer>().bounds.size.y;
-        //startOffset = 0;
     }
 
     private void OnDrawGizmosSelected ()
     {
-        Vector3 start = transform.position;// + Vector3.up * startOffset;
+        Vector3 start = transform.position;
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(
             start + Vector3.up * length / 2f + Vector3.right * -10,
@@ -35,16 +34,18 @@ public class ParallaxPaner : MonoBehaviour
             start - Vector3.up * length / 2f + Vector3.right * 10);
     }
 
+    float _offset;
     private void Start ()
     {
         startPos = transform.position.y;
         cam = Camera.main.gameObject;
+        _offset = cam.transform.position.y;
     }
 
     private void Update ()
     {
-        float t = cam.transform.position.y * (1-parallaxAmount);
-        float dist = cam.transform.position.y * parallaxAmount;
+        float t = (cam.transform.position.y - _offset) * (1-parallaxAmount);
+        float dist = (cam.transform.position.y - _offset) * parallaxAmount;
 
         transform.position = new Vector3(transform.position.x, startPos + dist, transform.position.z);
 

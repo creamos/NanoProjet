@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public bool isGameRunning { get; private set; } = false;
     public float startTime { get; private set; }
     public float GameTime => Mathf.Max(Time.time - startTime, 0);
+    public float MaxTime => _phases[_phases.Length - 1].endTime;
 
 
     float _currentPhaseStartTime => startTime + _phases[currentPhaseID].startTime;

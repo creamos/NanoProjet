@@ -1,9 +1,6 @@
 using FMODUnity;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
-using UnityEngine.Playables;
 
 public class AudioManager : MonoBehaviour
 {
@@ -54,6 +51,7 @@ public class AudioManager : MonoBehaviour
         e_instMusic.getDescription(out e_descHardmode);
         PARAMETER_DESCRIPTION p_descrHardmode;
         e_descHardmode.getParameterDescriptionByName("Hardmode", out p_descrHardmode);
+        p_idHardmode = p_descrHardmode.id;
     }
 
     public void ChangeMusicToHardmode()
@@ -72,6 +70,15 @@ public class AudioManager : MonoBehaviour
         if (!IsPlaying(e_instMusic))
         {
             e_instMusic.start();
+        }
+    }
+
+    public void StopMusic()
+    {
+        if (IsPlaying(e_instMusic))
+        {
+            e_instMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            e_instMusic.release();
         }
     }
 
