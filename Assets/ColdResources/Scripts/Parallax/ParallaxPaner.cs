@@ -46,7 +46,7 @@ public class ParallaxPaner : MonoBehaviour
 
     private void Update ()
     {
-        float t = (cam.transform.position.y - _offset) * (1-parallaxAmount);
+        float t = (cam.transform.position.y ) * (1-parallaxAmount);
         float dist = (cam.transform.position.y - _offset) * parallaxAmount;
 
         transform.position = new Vector3(transform.position.x, startPos + dist, transform.position.z);

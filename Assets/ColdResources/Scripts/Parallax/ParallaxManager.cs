@@ -53,10 +53,7 @@ public class ParallaxManager : MonoBehaviour
     {
         if (parallax) {
 
-            parallax.transform.position = Vector3.up * (_playersManager.players
-                .Where(player => player)
-                .Select(player => player.transform.position.y)
-                .OrderBy(position => position).First()
+            parallax.transform.position = Vector3.up * (Camera.main.transform.position.y
                 + parallax.startOffset);
 
             parallax.gameObject.SetActive(true);
