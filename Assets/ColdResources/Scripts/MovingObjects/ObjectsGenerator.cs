@@ -9,10 +9,6 @@ public class ObjectsGenerator : MonoBehaviour
     [Header("Positioning")]
     [SerializeField] private BoundsDataSO _boundsData;
 
-    [SerializeField] private bool _useTestPlayer = false;
-    [SerializeField, ShowIf("_useTestPlayer")] private Transform _testPlayer;
-    [SerializeField, HideIf("_useTestPlayer")] private PlayersManagerSO _playersManager;
-
     [Header("Phase Generation")]
     [SerializeField] private GamePhaseDataSO _phaseData;
     [SerializeField, ReadOnly] private List<Transform> _generatedObjects = new List<Transform>();
@@ -29,7 +25,7 @@ public class ObjectsGenerator : MonoBehaviour
     [Button]
     public void StopGenerating() {
         Debug.Log("Stopped generation");
-        StopCoroutine(_generation);
+        if (_generation != null) StopCoroutine(_generation);
     }
 
     private void Update() {
