@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             ApplyKnockback();
             CollisionEvent?.Invoke();
         }
-        if (other.CompareTag("Booster") && other.TryGetComponent(out Booster booster) && !_hitBoosters.Contains(booster)) {
+        if (other.TryGetComponent(out Booster booster) && !_hitBoosters.Contains(booster)) {
             _boostPrompt.enabled = true;
             _hitBoosters.Add(booster);
         }
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Obstacle") && _hitObstacles.Contains(other.transform)) {
             _hitObstacles.Remove(other.transform);
         }
-        if (other.CompareTag("Booster") && other.TryGetComponent(out Booster booster) && _hitBoosters.Contains(booster)) {
+        if (other.TryGetComponent(out Booster booster) && _hitBoosters.Contains(booster)) {
             _boostPrompt.enabled = false;
             _hitBoosters.Remove(booster);
         }
