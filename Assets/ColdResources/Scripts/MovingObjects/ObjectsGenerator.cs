@@ -41,7 +41,7 @@ public class ObjectsGenerator : MonoBehaviour
         while (i < _generatedObjects.Count) {
             generated_object = _generatedObjects[i];
             generated_bounds = _generatedObjectsBounds[i];
-            if (generated_object.position.y > destroy_pos.y && !generated_bounds.Contains(destroy_pos)) {
+            if (generated_bounds.center.y > destroy_pos.y && !generated_bounds.Contains(destroy_pos)) {
                 Destroy(generated_object.gameObject);
                 _generatedObjects.RemoveAt(i);
                 _generatedObjectsBounds.RemoveAt(i);
@@ -90,16 +90,7 @@ public class ObjectsGenerator : MonoBehaviour
         horizontal_pos *= _boundsData.boundsWidth + _boundsData.padding.x;
 
         Vector2 target_pos = Vector2.zero;
-        if (_useTestPlayer) target_pos = _testPlayer.transform.position;
-        else {
-            foreach (var player in _playersManager.players)
-            {
-                if (player) {
-                    Vector2 pos = player.transform.position;
-                    if (pos.y < target_pos.y) target_pos = pos;
-                }
-            }
-        }
+        target_pos.y = PlayerMovement.lowestPosition;
         target_pos.x = horizontal_pos;
         target_pos.y -= _boundsData.boundsHeight + _boundsData.padding.y;
         
@@ -113,21 +104,13 @@ public class ObjectsGenerator : MonoBehaviour
         foreach (Renderer r in renderers) {
             b.Encapsulate(r.bounds);
         }
+        Debug.Log(b);
         return b;
     }
 
     private Vector2 GetDestroyPosition() {
         Vector2 target_pos = Vector2.zero;
-        if (_useTestPlayer) target_pos = _testPlayer.transform.position;
-        else {
-            foreach (var player in _playersManager.players)
-            {
-                if (player) {
-                    Vector2 pos = player.transform.position;
-                    if (pos.y > target_pos.y) target_pos = pos;
-                }
-            }
-        }
+        target_pos.y = PlayerMovement.highestPosition;
         target_pos.x = 0.0f;
         target_pos.y += _boundsData.boundsHeight + _boundsData.padding.y;
         
@@ -143,5 +126,13 @@ public class ObjectsGenerator : MonoBehaviour
         if (phase = _phaseData) {
             StopGenerating();
         } 
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.magenta;
+        foreach (Bounds generated_bounds in _generatedObjectsBounds)
+        {
+            Gizmos.DrawWireCube(generated_bounds.center, generated_bounds.size);
+        }
     }
 }
