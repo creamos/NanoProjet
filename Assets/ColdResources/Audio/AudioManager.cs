@@ -24,10 +24,14 @@ public class AudioManager : MonoBehaviour
     EventInstance e_instMusic;
 
     [SerializeField]
+    EventReference e_refMenuMusic;
+    EventInstance e_instMenuMusic;
+
+    [SerializeField]
     EventReference e_refBoost;
     EventInstance e_instBoost;
 
-    [SerializeField]
+    //[SerializeField]
     EventReference e_refSlow;
     EventInstance e_instSlow;
 
@@ -42,6 +46,10 @@ public class AudioManager : MonoBehaviour
 
     void Start ()
     {
+        // Init menu music
+        e_instMenuMusic = RuntimeManager.CreateInstance(e_refMenuMusic);
+        e_instMenuMusic.start();
+
         // Init music event and fetch hardmode parameter
         e_instMusic = RuntimeManager.CreateInstance(e_refMusic);
         EventDescription e_descHardmode;
@@ -64,8 +72,14 @@ public class AudioManager : MonoBehaviour
 
     public void StartMusic ()
     {
-        if (!IsPlaying(e_instMusic)) {
+        if (!IsPlaying(e_instMusic))
+        {
             e_instMusic.start();
+        }
+        if (IsPlaying(e_instMenuMusic))
+        {
+            e_instMenuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            e_instMenuMusic.release(); ;
         }
     }
 
