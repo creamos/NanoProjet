@@ -521,7 +521,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1977060336
 MonoBehaviour:
@@ -861,6 +861,26 @@ PrefabInstance:
     - target: {fileID: 7920535843116557429, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083073697906580182, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: e_refMenuMusic.Path
+      value: event:/MusicMENU
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083073697906580182, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: e_refMenuMusic.Guid.Data1
+      value: -111752296
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083073697906580182, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: e_refMenuMusic.Guid.Data2
+      value: 1276521694
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083073697906580182, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: e_refMenuMusic.Guid.Data3
+      value: -2144533347
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083073697906580182, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
+      propertyPath: e_refMenuMusic.Guid.Data4
+      value: 32323162
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a0cf71e76e85b44ebd26f3266447bb9, type: 3}
