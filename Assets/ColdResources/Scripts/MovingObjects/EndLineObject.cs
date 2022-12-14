@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using MoreMountains.Feedbacks;
 
 public class EndLineObject : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class EndLineObject : MonoBehaviour
     }
 
     IEnumerator EndProcess() {
+        MMF_Player end_feedback = GetComponent<MMF_Player>();
+        if (end_feedback) end_feedback.PlayFeedbacks();
+
         GameObject target_vcam = GameObject.FindGameObjectWithTag("GameplayCamera");
         target_vcam.SetActive(false);
         
