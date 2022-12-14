@@ -9,7 +9,8 @@ public class PlayerSetup : MonoBehaviour
     public void Init(PlayerDataSO data, Vector3 position)
     {
         GetComponent<PlayerDataReference>().playerData = data;
-
+        GetComponent<PlayerMovement>().Init();
+        
         transform.position = position;
 
         GameObject visual;

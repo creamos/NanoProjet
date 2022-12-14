@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
@@ -46,7 +47,17 @@ public class PlayerMovement : MonoBehaviour
 
     private StudioEventEmitter _emitter;
 
-    static float _lowestPosition;
+    static float[] _positions;
+    public static float lowestPosition => _positions?.Min() ?? float.NaN;
+    public static float highestPosition => _positions?.Max() ?? float.NaN;
+
+
+#if UNITY_EDITOR
+    [ShowNativeProperty]
+    float lowestPos => lowestPosition;
+    [ShowNativeProperty]
+    float highestPos => highestPosition;
+#endif
 
     private void Awake ()
     {
@@ -55,11 +66,31 @@ public class PlayerMovement : MonoBehaviour
         _data = GetComponent<PlayerDataReference>();
     }
 
+    private void OnDestroy ()
+    {
+        _fireAction.performed -= OnTrigger;
+    }
+
+    public void Init ()
+    {
+        _playerInput = GetComponent<PlayerInput>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _data = GetComponent<PlayerDataReference>();
+
+        _positions ??= new float[_data.ID + 1];
+
+        if (_data.ID >= _positions.Length) {
+            _positions = _positions.Concat(new float[_data.ID + 1 - _positions.Length]).ToArray();
+        }
+        _positions[_data.ID] = 0;
+    }
+
     private void Start ()
     {
         _emitter = GetComponent<StudioEventEmitter>();
         _moveAction = _playerInput.actions["move"];
         _fireAction = _playerInput.actions["fire"];
+        _fireAction.performed -= OnTrigger;
         _fireAction.performed += OnTrigger;
         _pos = transform.position;
     }
@@ -76,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             _vel.y += add_boost + add_knockback;
         }
         _pos += _vel * Time.deltaTime;
-        _pos.y = Mathf.Min(_pos.y, _lowestPosition + _boundsData.boundsHeight);
+        _pos.y = Mathf.Min(_pos.y, lowestPosition + _boundsData.boundsHeight);
 
         if (_boundsData) {
             float clamped_horizontal = Mathf.Clamp(_pos.x, - _boundsData.boundsWidth * 0.5f, _boundsData.boundsWidth * 0.5f);
@@ -84,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.position = _pos;
 
-        if (_pos.y < _lowestPosition) _lowestPosition = _pos.y;
+        _positions[_data.ID] = _pos.y;
     }
 
     private void FixedUpdate ()
