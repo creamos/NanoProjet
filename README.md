@@ -1,23 +1,23 @@
 # NanoProjet
 
-Unity Game made during the NanoProjects
+This small project contains A Star Waltz, a 2D 1v1 racing game, where you can play as two shootings stars.
 
 # Description
 
-/TODO/
+This game was made with Unity during the Nano Projects 2022.
+It was made in roughly a week by me & 8 other teammates.
 
-# Requirements 
-
-/TODO/
+[Try the game](https://julien-duronsoy.itch.io/unevalsestellaire) on Itch.io.
+It requires 2 controllers (or at least one and a keyboard) to be played.
 
 # Credits
 
-- Julien Duronsoy (management)
-- Alexandre Lacroix (programming)
-- Tanguy Depraz (programming)
-- Isaure Maurel (game design)
-- Majda Mdahoma Hadji (game design)
-- Loan Le Hoang (graph)
-- Baptiste Lalue (graph)
-- Oscar Juteau (ergonomy)
-- Gorik Gazarian (sound design)
+- **Julien Duronsoy** (Producer)
+- **Alexandre Lacroix** (Programmer)
+- **Tanguy Depraz** (Programmer)
+- **Isaure Maurel** (Game Designer)
+- **Majda Mdahoma Hadji** (Game Designer)
+- **Loan Le Hoang** (2D Artist)
+- **Baptiste Lalue** (2D Artist)
+- **Oscar Juteau** (UI/UX)
+- **Gorik Gazarian** (Composer/Sound Designer)
