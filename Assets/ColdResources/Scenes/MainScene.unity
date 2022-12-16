@@ -250,14 +250,6 @@ PrefabInstance:
       propertyPath: m_CameraType
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8410151918988241342, guid: 543f3425670c40a429d3327f05c2ae56, type: 3}
-      propertyPath: m_Cameras.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410151918988241342, guid: 543f3425670c40a429d3327f05c2ae56, type: 3}
-      propertyPath: m_Cameras.Array.data[0]
-      value: 
-      objectReference: {fileID: 69209691}
     - target: {fileID: 8540534143359800799, guid: 543f3425670c40a429d3327f05c2ae56, type: 3}
       propertyPath: orthographic size
       value: 5.4
@@ -268,11 +260,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 543f3425670c40a429d3327f05c2ae56, type: 3}
---- !u!20 &69209691 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7987694593427569601, guid: 543f3425670c40a429d3327f05c2ae56, type: 3}
-  m_PrefabInstance: {fileID: 69209690}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443303077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,53 +691,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
+    - target: {fileID: 4547346959890735693, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+      propertyPath: m_Name
+      value: Parallax Planes
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507996, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
+    - target: {fileID: 4547346959890735694, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8878648852270507999, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}
-      propertyPath: m_Name
-      value: Parallax Planes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bd7c060006b6ff478fa79ffc1f452d0, type: 3}

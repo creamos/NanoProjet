@@ -74,6 +74,24 @@ public class ParallaxPaner : MonoBehaviour
         length = GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
+    private void OnDrawGizmosSelected ()
+    {
+        Bounds bounds = GetComponent<SpriteRenderer>().bounds;
+
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>()) {
+            bounds.Encapsulate(renderer.bounds);
+        }
+
+        var left = bounds.center + bounds.size.x / 2f * Vector3.left;
+        var right = bounds.center + bounds.size.x  / 2f * Vector3.right;
+        var up = bounds.center + bounds.size.y / 2f * Vector3.up;
+        var down = bounds.center + bounds.size.y / 2f * Vector3.down;
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawLine(left + (bounds.size.y / 2f + 1f) * Vector3.up, left + (bounds.size.y / 2f + 1f) * Vector3.down);
+        Gizmos.DrawLine(right + (bounds.size.y / 2f + 1f) * Vector3.up, right + (bounds.size.y / 2f + 1f) * Vector3.down);
+        Gizmos.DrawLine(up + (bounds.size.x / 2f + 1f) * Vector3.left, up + (bounds.size.x / 2f + 1f) * Vector3.right);
+        Gizmos.DrawLine(down + (bounds.size.x / 2f + 1f) * Vector3.left, down + (bounds.size.x / 2f + 1f) * Vector3.right);
+    }
 
     /*
     private void OnDrawGizmosSelected ()

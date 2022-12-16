@@ -10,10 +10,12 @@ public class EndLineObject : MonoBehaviour
     // Very ugly code - and that's it
     [SerializeField] private float _endWaitTime = 3.0f;
 
+    private Coroutine _endRoutine;
+
     private void OnTriggerEnter2D(Collider2D other) {
         PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-        if (playerMovement) {
-            StartCoroutine("EndProcess");
+        if (playerMovement && _endRoutine == null) {
+            _endRoutine = StartCoroutine(EndProcess());
         }
     }
 
@@ -25,6 +27,8 @@ public class EndLineObject : MonoBehaviour
         target_vcam.SetActive(false);
         
         yield return new WaitForSeconds(_endWaitTime);
+
+        _endRoutine = null;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
