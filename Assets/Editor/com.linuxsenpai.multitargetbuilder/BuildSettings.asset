@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a096f48734c4689d7828bb50843c9223, type: 3}
+  m_Name: BuildSettings
+  m_EditorClassIdentifier: 
+  rootOutputDirectory: C:/Users/tangu/Documents/Unity Projects/NanoProjet/Builds
+  targets:
+  - title: Une Valse Stellaire
+    company: 
+    outputDirectory: Windows
+    name: Windows
+    enabled: 1
+    useDefaultScenes: 0
+    scenes:
+    - {fileID: 102900000, guid: 860e5473de4682d48b19472b1b99ef1e, type: 3}
+    targetGroup: 1
+    target: 5
+    options: 0
+  - title: Une Valse Stellaire
+    company: 
+    outputDirectory: OSX
+    name: OSX
+    enabled: 1
+    useDefaultScenes: 0
+    scenes:
+    - {fileID: 102900000, guid: 860e5473de4682d48b19472b1b99ef1e, type: 3}
+    targetGroup: 1
+    target: 2
+    options: 0
+  - title: Une Valse Stellaire
+    company: 
+    outputDirectory: Linux
+    name: Linux
+    enabled: 1
+    useDefaultScenes: 0
+    scenes:
+    - {fileID: 102900000, guid: 860e5473de4682d48b19472b1b99ef1e, type: 3}
+    targetGroup: 1
+    target: 24
+    options: 0
+  verbose: 1
